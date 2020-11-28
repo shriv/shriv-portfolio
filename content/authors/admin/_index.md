@@ -17,33 +17,22 @@ organizations:
 bio: My happy place is at the intersection of geospatial, network and bayesian analyses. 
 
 interests:
-- AReproducible Analytical Pipelines
-- Geospatial analysis
+- Reproducible analytical pipelines
+- Urban morphology
+- Urban development
+- Geospatial networks
 - Network analysis
 - Bayesian modelling
-- Statistical Learning
+- Statistical learning
 - Scientific communication
 
 experience:
-  workplaces: 
-  - workplace: Data Science Consultant
-    company: Tenzing
-    year: 2018 - 2019
-  - workplace: Independent Data Science Consultant
-    company: Publons
-    year: 2018
-  - workplace: Independent Data Science Consultant
-    company: Metail
-    year: 2017 - 2018
-  - workplace: Data Scientist
-    company: Metail (Cambridge, UK)
-    year: 2013 - 2017
-
   courses:
   - course: PhD in Physics
     institution: Victoria University
     year: 2013
-
+  - course: MSc in Physics
+  - course: BScTech in Advanced Materials
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
