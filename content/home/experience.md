@@ -25,13 +25,7 @@ date_format = "Jan 2006"
   location = "New Zealand"
   date_start = "2018-07-01"
   date_end = "2019-08-01"
-  description = """
-  Responsibilities include:
-  
-  * Analysing
-  * Modelling
-  * Deploying
-  """
+  description = """"""
 
 [[experience]]
   title = "Independent Data Science Consultant"

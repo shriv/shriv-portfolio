@@ -17,13 +17,13 @@ organizations:
 bio: My happy place is at the intersection of geospatial, network and bayesian analyses. 
 
 interests:
-- Reproducible analytical pipelines
-- Urban morphology
-- Urban development
-- Geospatial networks
-- Network analysis
+- Reproducible analytics
+- Urban analytics
 - Bayesian modelling
 - Statistical learning
+- Geospatial analysis
+- Network analysis
+- Causal analysis
 - Scientific communication
 
 experience:
@@ -32,7 +32,11 @@ experience:
     institution: Victoria University
     year: 2013
   - course: MSc in Physics
+    institution: Victoria University
+    year:
   - course: BScTech in Advanced Materials
+    institution: Victoria University
+    year: 
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
