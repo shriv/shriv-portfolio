@@ -11,6 +11,7 @@ date: 2018-09-20
 lastmod: 
 featured: false
 draft: false
+toc: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -224,12 +225,12 @@ Now that we have some geolocation data, it's a useful exercise the plot them on 
 ### Z Stations
 
 <div class="iframe_container">
-<iframe src="../images/2018-09-20-Fuel-Stations-Analysis/z_stations.html"
+<iframe src="z_stations.html"
 style="width: 100%; height: 450px;"></iframe>
 </div>
 
 ## BP Stations
 <div class="iframe_container">
-<iframe src="../images/2018-09-20-Fuel-Stations-Analysis/bp_stations.html"
+<iframe src="bp_stations.html"
 style="width: 100%; height: 450px;"></iframe>
 </div>
