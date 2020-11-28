@@ -67,4 +67,4 @@ user_groups:
 - Visitors
 ---
 
-Shrividya Ravi is a data scientist working to push the analytics capabilities public sector transport analytics. Her current work in the Ministry of Transport involves new modelling paradigms for transport policy (including agent based modelling and bayesian models), comprehensive re-design of legacy workflows to Reproducible Analytical Pipelines and building towards agile and collaborative ways of working for public sector analysts. 
+Shrividya Ravi (Shriv) is a data scientist working to push the analytics capabilities public sector transport analytics. Her current work in the Ministry of Transport involves new modelling paradigms for transport policy (including agent based modelling and bayesian models), comprehensive re-design of legacy workflows to Reproducible Analytical Pipelines and building towards agile and collaborative ways of working for public sector analysts. 

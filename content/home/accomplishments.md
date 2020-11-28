@@ -21,31 +21,22 @@ date_format = "Jan 2006"
 [[item]]
   organization = "Coursera"
   organization_url = "https://www.coursera.org"
-  title = "Neural Networks and Deep Learning"
+  title = "A Crash Course in Causality: Inferring Causal Effects from Observational Data"
   url = ""
-  certificate_url = "https://www.coursera.org"
-  date_start = "2018-10-01"
-  date_end = ""
+  certificate_url = "https://www.coursera.org/account/accomplishments/verify/MYFJTFA2ASWF"
+  date_start = "2018-07-01"
+  date_end = "2018-08-01"
   description = ""
 
 [[item]]
   organization = "edX"
   organization_url = "https://www.edx.org"
-  title = "Blockchain Fundamentals"
-  url = "https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals"
-  certificate_url = "https://www.edx.org"
-  date_start = "2018-03-01"
-  date_end = ""
-  description = "Formulated informed blockchain models, hypotheses, and use cases."
-  
-[[item]]
-  organization = "DataCamp"
-  organization_url = "https://www.datacamp.com"
-  title = "Object-Oriented Programming in R: S3 and R6 Course"
+  title = "Causal Diagrams: Draw Your Assumptions Before Your Conclusions"
   url = ""
-  certificate_url = "https://www.datacamp.com"
-  date_start = "2017-07-01"
-  date_end = "2017-12-21"
+  certificate_url = "https://courses.edx.org/certificates/511f74a896b846efa8e3865a57b90417"
+  date_start = "2017-12-01"
+  date_end = "2017-12-08"
   description = ""
+  
 
 +++
