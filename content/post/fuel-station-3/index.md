@@ -54,7 +54,8 @@ All the above steps are carried out by the Python package Pandana. The second st
 
 ### Accessibility to Z vs. BP
 
-![png](Fuel_Stations_Analysis_64_0.png) |  ![png](Fuel_Stations_Analysis_65_0.png)
+<img src="Fuel_Stations_Analysis_64_0.png" style="width:50%;"><img src="Fuel_Stations_Analysis_65_0.png" style="width:50%;">
+
 
 The accessibility heatmaps indicate that both Z and BP have reasonable coverage in the Wellington region. Most of the suburbs seem to be within reasonable (5km) driving distance of a Z / BP fuel station. The heatmaps also highlight some fine-grained details:
 - Z has no coverage in Wanuiomata while BP does.
@@ -110,7 +111,7 @@ Given the above findings, we can tentatively answer the business question
 
 However, this tentative conclusion needs more work to become a substantive one. Suggestions in the following section.
 
-# Future Work
+## Future Work
 Some immediate follow up work can include:
 - A more complete analysis. Since Z is not the only brand of the *Z entity*, we need to include Caltex Stations as well.
 - Combining population density with accessibility. Currently, accessibility analysis considers every node to contain the same number of people. This is clearly untrue. A better understanding of the weaknesses in Z's coverage would need to know which high population density nodes have poor access to Z stations.
