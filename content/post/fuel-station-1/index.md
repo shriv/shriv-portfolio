@@ -99,7 +99,7 @@ Spatial data includes geographical information for physical entities in our worl
 We need the following data to calculate the coverage metrics and do the quantitative analyses. There are two key types of data: Base and Points of Interest (POIS). The tools used to get and process the data are described in more detail in the following section.
 
 Data | Type | Why? | How?
---- | --- | --- | ---
+---- | ---- | ---- | ----
 Geo-tagged fuel stations | POIS | The key spatial entities we're interested in | OpenStreetMap via Overpass
 Regional map and street network | Base | To connect the fuel stations via real world streets and roads | OpenStreetMap via OSMnx
 Street network broken up into regular points | Base |  For simpler interactions between geography and fuel stations | OpenStreetMap via Panadana
@@ -170,13 +170,13 @@ The main primitives used in this report are ways, nodes and tags. The tags are u
 Once the query is constructed and sent with a 'GET' request, the resulting JSON is reshaped as a Pandas dataframe that contains relevant metadata about each fuel station.
 
 
-|id|lat|lon|name|operator|brand|type|
-|--- |--- |--- |--- |--- |--- |
-|2845230323|-41.325288|174.810883|NaN|NaN|NaN|node|
-|2845230324|-41.325284|174.811057|NaN|NaN|NaN|node|
-|2845230322|-41.325275|174.810774|NaN|NaN|NaN|node|
-|2845230321|-41.325200|174.810729|NaN|NaN|NaN|node|
-|5821475056|-41.325128|174.810920|Z Broadway|NaN|Z|node|
+|id|lat|lon|name|operator|brand|type
+|--- |--- |--- |--- |--- |--- 
+|2845230323|-41.325288|174.810883|NaN|NaN|NaN|node
+|2845230324|-41.325284|174.811057|NaN|NaN|NaN|node
+|2845230322|-41.325275|174.810774|NaN|NaN|NaN|node
+|2845230321|-41.325200|174.810729|NaN|NaN|NaN|node
+|5821475056|-41.325128|174.810920|Z Broadway|NaN|Z|node
 
 
 ## Get specific fuel stations
@@ -201,22 +201,22 @@ Since the underlying problem is a data issue, we can add / edit the data ourselv
 After editing the OSM, the corrected list of Z stations is now at parity with the Z website. With a similar brand / operator filter, we can create an equivalent dataframe for BP stations.
 
 
-|id|lat|lon|name|operator|brand|type|
-|--- |--- |--- |--- |--- |--- |
-|5821475056|-41.325128|174.810920|Z Broadway|NaN|Z|node|
-|3120151445|-41.320054|174.794407|Z Kilbirnie|NaN|Z|node|
-|5821475059|-41.314924|174.813972|Z Miramar|NaN|Z|node|
-|5821475061|-41.313163|174.781812|Z Constable Street|NaN|Z|node|
-|5821475058|-41.297146|174.776556|Z Taranaki Street|NaN|Z|node|
-|5544110098|-41.294501|174.774397|Z Vivian St|NaN|Z|node|
-|5821475063|-41.281636|174.778417|Z Harbour City|NaN|Z|node|
-|5821475060|-41.256020|174.765535|Z Crofton Downs|NaN|Z|node|
-|2206248455|-41.236226|174.906171|Z Seaview|NaN|Z|node|
-|331132009|-41.226300|174.806795|Z Johnsonville|NaN|Z|node|
-|5821475057|-41.222778|174.868833|Z Petone|NaN|Z|node|
-|2118620317|-41.214312|174.887163|Z Hutt Road|NaN|Z|node|
-|5821475062|-41.204023|174.914085|Z VIC Corner|NaN|Z|node|
-|319121061|-41.197885|174.937446|Z High Street|Z|NaN|node|
+|id|lat|lon|name|operator|brand|type
+|--- |--- |--- |--- |--- |--- 
+|5821475056|-41.325128|174.810920|Z Broadway|NaN|Z|node
+|3120151445|-41.320054|174.794407|Z Kilbirnie|NaN|Z|node
+|5821475059|-41.314924|174.813972|Z Miramar|NaN|Z|node
+|5821475061|-41.313163|174.781812|Z Constable Street|NaN|Z|node
+|5821475058|-41.297146|174.776556|Z Taranaki Street|NaN|Z|node
+|5544110098|-41.294501|174.774397|Z Vivian St|NaN|Z|node
+|5821475063|-41.281636|174.778417|Z Harbour City|NaN|Z|node
+|5821475060|-41.256020|174.765535|Z Crofton Downs|NaN|Z|node
+|2206248455|-41.236226|174.906171|Z Seaview|NaN|Z|node
+|331132009|-41.226300|174.806795|Z Johnsonville|NaN|Z|node
+|5821475057|-41.222778|174.868833|Z Petone|NaN|Z|node
+|2118620317|-41.214312|174.887163|Z Hutt Road|NaN|Z|node
+|5821475062|-41.204023|174.914085|Z VIC Corner|NaN|Z|node
+|319121061|-41.197885|174.937446|Z High Street|Z|NaN|node
 
 
 ## Visualsing fuel stations
