@@ -200,8 +200,8 @@ The key problem with the data is that a significant portion of the stations don'
 Since the underlying problem is a data issue, we can add / edit the data ourselves. You can sign up and verify your email as an OSM editor - quite easy to do. Once I got the permission to edit OSM, I simply went in and added / updated the nodes for the Z fuel stations. Since I need the BP list to be accuate as well, I also edited (where required) the data for BP stations in the Wellington bounding box. I should mentiona that we can actually convert ways to a centroid (a single lat, lon value at the centre of the polygon) with Geopandas. However, I didn't know about this helpful feature when I was working through the fuel station analysis! The polygon centroid method will be introduced in a later post on geo-munging.
 
 
-## Fuel stations
-fter editing the OSM, the corrected list of Z stations is now at parity with the Z website. With a similar brand / operator filter, we can create an equivalent dataframe for BP stations.
+## Fuel stations in Wellington
+After editing the data in OSM, the corrected list of Z stations is now at parity with the Z website. With a similar brand / operator filter, we can create an equivalent dataframe for BP stations.
 
 | id         | lat        | lon        | name               | operator | brand | type |
 |------------|------------|------------|--------------------|----------|-------|------|
@@ -221,7 +221,7 @@ fter editing the OSM, the corrected list of Z stations is now at parity with the
 | 319121061  | -41.197885 | 174.937446 | Z High Street      | Z        | NaN   | node |
 
 
-### Visualsing fuel stations
+### Visualising fuel stations
 Now that we have some geolocation data, it's a useful exercise the plot them on a map. Folium is a great package for embedding interactive Leaflet apps into Jupyter notebook and is also web compatible with no additional steps. All this functionality with just 4 lines of Python code! The maps below show that Z and BP stations are well dispersed around the Wellington metropolitan area - which looks rather like a fish hook ([*hei matau*](https://en.wikipedia.org/wiki/Hei_matau))! There are clear differences in coverage but it's hard to articulate these differences with only a simple point map. In the next two posts of the series, we'll see how to extract quantitative, comparable insights about coverage.
 
 #### Z Stations
