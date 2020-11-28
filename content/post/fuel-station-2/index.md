@@ -62,7 +62,7 @@ The route between the nodes uses the edges (streets and roads) of the spatial ne
 ### Simple example: route between Z Kilbirnie and Z Vivian St
 The following example looks at the distance and route between two Z stations: Z Kilbernie and Z Vivian St. The red line in the figure is the shortest route that connects the two stations. From the street shapes, you can see that the route is wending it's way around Evans Bay and Basin Reserve, before entering the central city street grid. This route has a distance of 4.6 km - a value that corresponds quite closely to that given by [Google Maps](https://bit.ly/2Mvjr0L).
 
-![png](Fuel Stations Analysis_29_0.png)
+![png](Fuel_Stations_Analysis_29_0.png)
 
 *Shortest distance between Z Kilbirnie and Z Vivian St is 4577.443 m*
 
@@ -71,7 +71,7 @@ The following example looks at the distance and route between two Z stations: Z 
  In the toy example, I only downloaded the street network within a 5km radius of Z Kilbirnie. For the main analysis though, we want all the streets and roads within the defined bounding box. The updated figure now shows the route between Z Kilbirnie and Z Vivian St overlayed on all the roads in the Wellington + Lower Hutt bounding box.  
 
 
-![png](Fuel Stations Analysis_31_0.png)
+![png](Fuel_Stations_Analysis_31_0.png)
 
 *Shortest distance between Z Kilbirnie and Z Vivian St is 4268.96 m*
 
@@ -112,7 +112,7 @@ We can visualise the network structure of the simpler, recast data. The weighted
 
 | Z network | BP network |
 |:---:|:---:|
-|![png](Fuel Stations Analysis_39_0.png)|![png](Fuel Stations Analysis_48_0.png)|
+|![png](Fuel_Stations_Analysis_39_0.png)|![png](Fuel_Stations_Analysis_48_0.png)|
 
 All these points indicate that while Z and BP cover similar areas of Wellington, *Z is better represented in Wellington City while BP dominates in Lower Hutt*. It would be very interesting to see if revenue per station is signficantly different for a Z station in Wellington City vs. Lower Hutt.
 
@@ -148,7 +148,7 @@ The average degree / connectivity for the Wellington City Z stations is much hig
 ## Nearest neighbours: Inter-station separation
 We can further reduce the pairwise distance matrix to the closest neighbour per statiion to calculate the average distance between any two Z stations. A more academic name for this metric is: *average inter-station separation*.
 
-![png](../images/2018-09-20-Fuel-Stations-Analysis/Fuel Stations Analysis_51_0.png)
+![png](Fuel_Stations_Analysis_51_0.png)
 
 The plots show that the physical coverage of Z vs. BP stations using the inter-station separation distances is asymmetric. There is also some indication of a *bimodal* distribution: a cluster of stations that are very close together and another cluster that are further apart. The difference between the two modes seems to be larger for BP.
 
