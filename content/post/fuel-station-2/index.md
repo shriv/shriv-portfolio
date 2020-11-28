@@ -3,6 +3,7 @@
 
 title: "Geospatial proximity analysis"
 subtitle: "Fuel stations - Part 2"
+toc: true
 summary: ""
 authors: []
 tags: []
