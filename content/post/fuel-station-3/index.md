@@ -54,7 +54,9 @@ All the above steps are carried out by the Python package Pandana. The second st
 
 ### Accessibility to Z vs. BP
 
-<img src="Fuel_Stations_Analysis_64_0.png" style="width:50%;"><img src="Fuel_Stations_Analysis_65_0.png" style="width:50%;">
+| Z | BP 
+| --- | --- 
+|![png](Fuel_Stations_Analysis_64_0.png)|![png](Fuel_Stations_Analysis_65_0.png)
 
 
 The accessibility heatmaps indicate that both Z and BP have reasonable coverage in the Wellington region. Most of the suburbs seem to be within reasonable (5km) driving distance of a Z / BP fuel station. The heatmaps also highlight some fine-grained details:
