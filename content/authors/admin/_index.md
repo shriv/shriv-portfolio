@@ -26,7 +26,7 @@ interests:
 - Causal analysis
 - Scientific communication
 
-experience:
+education:
   courses:
   - course: PhD in Physics
     institution: Victoria University
