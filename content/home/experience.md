@@ -20,7 +20,7 @@ date_format = "Jan 2006"
 
 [[experience]]
   title = "Senior Analyst"
-  company = "Minsitry of Transport"
+  company = "Ministry of Transport"
   company_url = ""
   location = "New Zealand"
   date_start = "2019-08-01"
