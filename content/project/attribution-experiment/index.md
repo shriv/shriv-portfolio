@@ -46,6 +46,6 @@ One avenue for learning about impact is adapting channel attribution methodologi
 
 Reducing pathways to a desired outcome simplifies the problem of impact analysis to the effect of an individual element on the final goal. This perspective works well for web browsing networks. The impact of new items or items with "enhanced features" can be seen by calculating their _contribution to the final goal_ - which is typically purchase on the site. 
 
-![](description-methood.png)
+![](description-method.png)
 
 While this methodology is not robust like causal methodologies, it is a valuable tool to gain _some_ insight from a natural, real-world experiment when the alternative is no insight of impact. 
