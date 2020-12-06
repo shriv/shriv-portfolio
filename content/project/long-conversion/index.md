@@ -40,7 +40,7 @@ url_video: ""
 slides: ""
 ---
 
-Customer analytics is a multidisciplinary field of marketing techniques, causal methods and market research. Mostly done towards the aim of getting us to open our wallets a little more. While the aim is ethically ambiguous to some, the technical side is rich and ripe for cross-disciplinary work. Particularly for bringing in statisitcal techniques used extensively in other disciplines for additional information and insight. 
+Customer analytics is a multidisciplinary field of marketing techniques, causal methods and market research - mostly towards the aim of getting us to open our wallets a little more. While this aim is ethically ambiguous to some, the technical side is rich and ripe for bringing in statisitcal techniques used extensively in other disciplines for additional information and insight. 
 
 One useful method for working with customer data is survival analysis. Heavily used within insurance, it is a useful set of models that take time series data of activity and return a probability of 'survival' to that point in time, and continued survival. For example, we can take a time series of a customer's visits to a website and get their probability over time of being a visitor. 
 

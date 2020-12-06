@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Returns Prediction"
+title: "Predicting customer behaviour: returns"
 summary: ""
 authors: []
 tags: []
