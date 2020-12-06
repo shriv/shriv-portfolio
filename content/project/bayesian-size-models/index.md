@@ -51,3 +51,6 @@ A bayesian model with a simple normal distribution for each fit point of bust, w
 Extending the simple normal model to including priors can significantly improve the fit charts. While the choice of a suitable prior can be difficult, the impact of a good prior can result in tidier outputs from the model. Even a prior that is an average across all the data can make a difference. For example, the dispersion and widths of the distributions can be reduced significantly. 
 
 ![](priors-effect.png)
+
+
+_Featured image Yoda by Ben Davis from the Noun Project_

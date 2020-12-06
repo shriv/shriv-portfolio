@@ -47,4 +47,3 @@ The level of variability in returns prompts a desire to understand _why_ returns
 ![](prediction-performance.png)
 
 
-_Featured image Yoda by Ben Davis from the Noun Project_
