@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: |
+abstract:
 "Static or interactive maps can reveal useful patterns and insights. For example, layering accident locations on a basemap can highlight hotspots of poor road safety. These simple data overlays can be extended to an integrated analysis with the road network for deeper insight - like accident hotspots on road segments that bottleneck commuter flows. As denizens of a city we primarily interact with the built urban environment via its streets, roads and paths. Hence, intuitive questions of the 'Urban Experience' must involve the geospatial road network. 
 
 In this workshop, we'll use Python and the packages, osmnx and pandana, to characterise Wellington: the cool little capital of New Zealand with a unique topography. Using omsnx, pandana and data of the built environment (from OpenStreetMap and Wellington City Council open data), we can quantify how Wellington functions as a city.
