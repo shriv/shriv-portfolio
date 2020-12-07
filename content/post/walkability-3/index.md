@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Walkability 3"
-subtitle: ""
+title: "Walking in Wellington"
+subtitle: "Part 3: bayesian modelling of walkability"
 summary: ""
 authors: []
 tags: []
@@ -11,6 +11,7 @@ date: 2020-11-29T13:36:02+13:00
 lastmod: 2020-11-29T13:36:02+13:00
 featured: false
 draft: false
+toc: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

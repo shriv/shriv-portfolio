@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Walkability 1"
-subtitle: ""
+title: "Walking in Wellington"
+subtitle: "Part 1: why analyse walkability?"
 summary: ""
 toc: true
 authors: []

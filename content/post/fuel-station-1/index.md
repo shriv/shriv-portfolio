@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Geospatial proximity analysis"
-subtitle: "Fuel stations - Part 1"
+title: "Geospatial proximity analysis with fuel stations"
+subtitle: "Part 1: using OpenStreetMap to get data"
 summary: ""
 authors: []
 tags: []

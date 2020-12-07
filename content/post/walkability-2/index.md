@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Walkability 2"
-subtitle: ""
+title: "Walking in Wellington - walkability metrics"
+subtitle: "Part 2: Calculating elevation-sensitve walkability"
 summary: ""
 toc: true
 authors: []

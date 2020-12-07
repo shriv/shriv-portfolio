@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Geospatial proximity analysis"
-subtitle: "Fuel stations - Part 3"
+title: "Geospatial proximity analysis with fuel stations - accessibility"
+subtitle: "Part 3: customer accessibility"
 toc: true
 summary: ""
 authors: []
