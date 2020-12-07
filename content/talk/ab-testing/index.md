@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Ab Testing"
+title: "A-Z of A/B Testing"
 event: "Data Insights Cambridge"
 event_url: https://tech.metail.com/tag/ab-testing/
 location:
@@ -11,7 +11,7 @@ address:
   region:
   postcode:
   country:
-summary:
+summary: "This talk presents a comprehensive overview of A/B testing discussing both the advantages and the caveats. A series of case studies and toy examples will detail the myriad of analyses possible from rich web events data. Topics covered include inference with hypothesis testing, regression, bootstrapping, Bayesian models and parametric simulations."
 abstract:
 
 # Talk start and end times.
