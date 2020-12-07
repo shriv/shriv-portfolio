@@ -3,7 +3,12 @@
 
 title: "Walking in Wellington - walkability metrics"
 subtitle: "Part 2: Calculating elevation-sensitve walkability"
-summary: ""
+summary: "Unlike cars, pedestrians are sensitive to their environment - from the weather to the terrain. Changes to either can impact the walking experience or the decision to walk. In this post, we explore the impact of hilly terrain on walkability. Specifically, on walkability to playgrounds - an amenity that is designed to be locally accessible on foot.
+
+In Wellington, hills increase walking time to playgrounds by 9% on average. This post further shows how walkability can be analysed from two perspectives: (1) accessibility _from_ homes _to_ playgrounds or, (2) catchment areas of playgrounds. Depending on the goal of the analysis, the same underlying dataset can be used to produce either perspective.
+
+Hills don't seem to impact average travel time much but we've used a highly idealistic walking speed to a playground! Furthermore, the distribution of accessibility is highly skewed. The average is not a representative metric. Even under the 'flat land' assumption, total travel times can be higher than 40 minutes.
+"
 toc: true
 authors: []
 tags: []
@@ -28,13 +33,6 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
-## Summary
-Unlike cars, pedestrians are sensitive to their environment - from the weather to the terrain. Changes to either can impact the walking experience or the decision to walk. In this post, we explore the impact of hilly terrain on walkability. Specifically, on walkability to playgrounds - an amenity that is designed to be locally accessible on foot.
-
-In Wellington, hills increase walking time to playgrounds by 9% on average. This post further shows how walkability can be analysed from two perspectives: (1) accessibility _from_ homes _to_ playgrounds or, (2) catchment areas of playgrounds. Depending on the goal of the analysis, the same underlying dataset can be used to produce either perspective.
-
-Hills don't seem to impact average travel time much but we've used a highly idealistic walking speed to a playground! Furthermore, the distribution of accessibility is highly skewed. The average is not a representative metric. Even under the 'flat land' assumption, total travel times can be higher than 40 minutes.
 
 ## Introduction
 Playgrounds are important local amenities that are designed with pedestrian access in mind. Hence, accessibility to playgrounds can act as a proxy for measuring _walkability_ of a city. Good design of local amenities should manage the various factors that might prohibit walking. For example, difficult terrain, population density induced crowding etc. In this post, we'll be examining the following question in detail.
