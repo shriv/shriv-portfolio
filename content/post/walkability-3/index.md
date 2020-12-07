@@ -1,9 +1,12 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Walking in Wellington"
-subtitle: "Part 3: bayesian modelling of walkability"
-summary: ""
+title: "Walking in Wellington - insights from modelling"
+subtitle: "Part 3: Bayesian modelling of walkability"
+summary: "In this post, we look at how a statistical model can provide specific insights about accessibility. By combining intuition and quantitative results, we see that some suburbs, like Karori, have poor and inconsistent accessibility to playgrounds, while suburbs like Newtown and Te Aro have consistently good accessibility.
+
+The model is further able to show that while Karori _seems_ bad, a significant reason is that the suburb is too large and heterogeneous compared to inner city suburbs like Te Aro and Newtown. The solution to this issue is using sensible spatial filters. We'll see that the LINZ spatial filter can be used for an updated, and more appropriate, model of accessibility.
+"
 authors: []
 tags: []
 categories: []
@@ -28,11 +31,6 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
-## Summary
-In this post, we look at how a statistical model can provide specific insights about accessibility. By combining intuition and quantitative results, we see that some suburbs, like Karori, have poor and inconsistent accessibility to playgrounds, while suburbs like Newtown and Te Aro have consistently good accessibility.
-
-The model is further able to show that while Karori _seems_ bad, a significant reason is that the suburb is too large and heterogeneous compared to inner city suburbs like Te Aro and Newtown. The solution to this issue is using sensible spatial filters. We'll see that the LINZ spatial filter can be used for an updated, and more appropriate, model of accessibility.
 
 ## Introduction
 Before diving into the nitty gritty of modelling accessibility across the different suburbs, it's worth taking a high-level persepective into _why_ modelling is useful. I hope to make the case that approximating reality with models allows us to dredge up some useful insights.

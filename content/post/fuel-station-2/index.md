@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Geospatial proximity analysis with fuel stations"
+title: "Geospatial proximity analysis with fuel stations - networks"
 subtitle: "Part 2: fuel station proximity networks"
 toc: true
 summary: ""
