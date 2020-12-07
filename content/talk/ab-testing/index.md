@@ -11,8 +11,8 @@ address:
   region:
   postcode:
   country:
-summary: "This talk presents a comprehensive overview of A/B testing discussing both the advantages and the caveats. A series of case studies and toy examples will detail the myriad of analyses possible from rich web events data. Topics covered include inference with hypothesis testing, regression, bootstrapping, Bayesian models and parametric simulations."
-abstract:
+summary: 
+abstract: "This talk presents a comprehensive overview of A/B testing discussing both the advantages and the caveats. A series of case studies and toy examples will detail the myriad of analyses possible from rich web events data. Topics covered include inference with hypothesis testing, regression, bootstrapping, Bayesian models and parametric simulations."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

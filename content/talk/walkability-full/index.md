@@ -11,8 +11,8 @@ address:
   region:
   postcode:
   country:
-summary: "This talk presents a methodology to calculate and model walkability to get geospatially relevant insights. The walkability calculation introduced is a novel approach that looks at local walkability and how even neighbourhood walking can be prohibitive due to the topography of Wellington"
-abstract:
+summary: 
+abstract: "This talk presents a methodology to calculate and model walkability to get geospatially relevant insights. The walkability calculation introduced is a novel approach that looks at local walkability and how even neighbourhood walking can be prohibitive due to the topography of Wellington"
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

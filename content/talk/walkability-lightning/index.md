@@ -11,8 +11,8 @@ address:
   region:
   postcode:
   country:
-summary: "This talk presents a lightning introduction to calculating walkability for the topographically challenged city of Wellington, New Zealand"
-abstract:
+summary: 
+abstract: "This talk presents a lightning introduction to calculating walkability for the topographically challenged city of Wellington, New Zealand"
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
