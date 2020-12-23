@@ -8,15 +8,14 @@ h3 {
 
 .dropdown-menu,
 nav#navbar-main li.nav-item {
-  font-weight: 700;
+  font-size: 1.2rem;
   text-transform: uppercase;
 
 }
 
 .navbar-brand {
-  font-weight: 700;
-  text-transform: uppercase;
-
+    font-weight: 1.8rem;
+    text-transform: uppercase;
 }
 
 .card-title, .card-subtitle{
