@@ -6,6 +6,7 @@ subtitle: "Part 3: Checking network results with APIs and visualising walkabilit
 summary: "Walking times are validated with routing APIs. Walkability is visualised as isochrones. "
 authors: []
 tags: []
+toc: true
 categories: []
 date: 2020-12-08T13:02:20+13:00
 lastmod: 2020-12-08T13:02:20+13:00
