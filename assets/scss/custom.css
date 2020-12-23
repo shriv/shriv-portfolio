@@ -1,3 +1,31 @@
 h1, h2, h3, h4 {
     text-transform: uppercase;
 }
+
+h3 {
+  font-weight: 400;
+}
+
+.dropdown-menu,
+nav#navbar-main li.nav-item {
+  font-size: 1.2rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.card-title, .card-subtitle{
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.powered-by {
+  display: none;
+}
+
+div[class^="ftn-"], div[class*=" #ftn-"] {
+  margin-top: -200px;
+  padding-top: 200px;
+}
