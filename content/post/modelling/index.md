@@ -6,6 +6,7 @@ subtitle: ""
 summary: ""
 authors: []
 tags: []
+toc: true
 categories: []
 date: 2020-12-23T17:47:54+13:00
 lastmod: 2020-12-23T17:47:54+13:00
