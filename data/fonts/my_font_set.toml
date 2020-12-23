@@ -1,11 +1,11 @@
 # Font style metadata
 name = "My Font Set"
 
-# Optional Google font URL 
-google_fonts = "Averia Serif Libre:300,300italic,400,400italic500|Alatsi|Roboto:400,400italic,700|Fredericka the Great"
+# Optional Google font URL
+google_fonts = "Palanquin Dark: 400,500|Alatsi|Roboto:400,400italic,700|Roboto+Mono"
 
-# Font families 
-heading_font = "Fredericka the Great"
-body_font = "Averia Serif Libre"
-nav_font = "Fredericka the Great"
-mono_font = "Averia Serif Libre" 
+# Font families
+heading_font = "Palanquin Dark"
+body_font = "Roboto"
+nav_font = "Palanquin Dark"
+mono_font = "Roboto Mono"
