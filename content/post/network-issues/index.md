@@ -30,15 +30,18 @@ projects: []
 ---
 
 ## Spatial networks: the power and challenge
-I've blogged many times previously about the insights enabled by spatial networks. But, the availability and quality of spatial network data can be challenging. I've so far utilised the vast Openstreetmap (OSM) via `osmnx` for my analyses. However, `omsnx` doesn't work well with spatial data created without the OSM taxonomy. As part of some side projects at work (and a general interest) I've wanted to work with rail network data. I've so far been able to get versions of New Zealand rail networks from a bunch of sources - from [LINZ](https://data.linz.govt.nz/search/?q=railway) to [Kiwirail open data](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0). After a frustrating weekend trying to understand why I couldn't route on the network, I realised that I need to amend my network analysis workflow to include pre-processing and diagnostic tools. This post goes through a simple diagnostic for checking network connectivity and highlights basic steps to create a connected, routeable network. The corrections I've applied may not be sufficient for a different network / use case but they are a great starting point. 
+I've blogged many times previously about the insights enabled by spatial networks. But, the availability and quality of spatial network data can be challenging. I've so far utilised the vast Openstreetmap (OSM) via `osmnx` for my analyses. However, `omsnx` doesn't work well with spatial data created without the OSM taxonomy. As part of some side projects at work (and a general interest) I've wanted to work with rail network data. I've so far been able to get versions of New Zealand rail networks from a bunch of sources - from [LINZ](https://data.linz.govt.nz/search/?q=railway) to [Kiwirail open data](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0). After a frustrating weekend trying to understand why I couldn't route on the network, I realised that I need to amend my network analysis workflow to include pre-processing and diagnostic tools. 
+
+This post goes through a simple diagnostic for checking network connectivity and highlights basic steps to create a connected, routeable network. The corrections I've applied may not be sufficient for a different network / use case but they are a great starting point. 
 
 
 ## Set up
-All code for this post can be found here. The `renv.lock` provides the package dependencies to run this project - though it is far from a parsimonious specification as I use my projects to explore. The package can be reduced considerably as there are several package requirements (e.g. ggraph, leaflet) not needed for this particular example. 
-
+All code for this post can be found [on github](https://github.com/shriv/r-geospatial). The `renv.lock` provides the package dependencies to run this project - though it is far from a parsimonious specification as I use my projects to explore. The package can be reduced considerably as there are several package requirements (e.g. ggraph, leaflet) not needed for this particular example. 
 
 
 I downloaded the New Zealand rail network from the [kiwirail open data hub](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693) as a geodatabase but other formats are also available. 
+
+Included in the repo is a file of port locations (`port_locs` dataframe) from around the world. Though this example will only use a subset of New Zealand ports. 
 
 
 ```r
@@ -60,34 +63,6 @@ nz_rail <- st_read(here::here("data", "kiwirail.gdb")) %>%
 ## Dimension:     XY
 ## Bounding box:  xmin: 167.9348 ymin: -46.59871 xmax: 178.0307 ymax: -35.39654
 ## CRS:           4326
-```
-
-Included in this repo is also a file of port locations from around the world. Though this example will only use a subset of New Zealand ports. 
-
-```r
-# nz port locations
-port_locs <- read_csv(here::here("data",
-                                 "port_locations.csv")) %>%
-  st_as_sf(coords=c("lon", "lat"), crs=4326) %>%
-  filter(country == "New Zealand") %>%
-  filter(LOCODE %in% c("NZAKL", "NZTRG", "NZNPE", "NZWLG",
-                       "NZNSN", "NZLYT", "NZPOE")) %>%
-  st_transform(crs=2193)
-```
-
-```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   port_name = col_character(),
-##   country = col_character(),
-##   LOCODE = col_character(),
-##   port_urls = col_character(),
-##   Coordinates = col_character(),
-##   Country = col_character(),
-##   lat = col_double(),
-##   lon = col_double()
-## )
 ```
 
 
@@ -152,7 +127,9 @@ routes_df
 ```
 
 ## Diagnosing issues
-The difficulty with spatial networks is that they may appear connected to the naked eye but there are some insidious issues that manifest in a disconnected graph. A simple diagnostic is to examine the connectivity of all the nodes in the network. A good metric is the node `degree` - the number of edges connected to any node. When the degree is `1`, the node is only connected to one edge. Terminal nodes, where the tracks end, are legitimate single degree nodes. However, as the interactive graph below shows, the whole network is comprised of disconnected single connection nodes. No wonder the routing algorithm couldn't find a path! 
+The difficulty with spatial networks is that they may appear connected to the naked eye but there are some insidious issues that manifest in a disconnected graph. A simple diagnostic is to examine the connectivity of all the nodes in the network. 
+
+A useful and simple connectivity metric is the node `degree` - the number of edges connected to any node. When the degree is `1`, the node is only connected to one edge. Terminal nodes, where the tracks end, are legitimate single degree nodes. However, as the interactive graph below shows, the whole rail network is comprised of disconnected, single connection nodes. No wonder the routing algorithm couldn't find a path! 
 
 
 ```r
@@ -208,7 +185,7 @@ railway_net <- nz_rail %>%
 
 ## A connected network?
 
-If we repeat the same routing calculation between the two points, we see now that there is a path!
+If we repeat the same routing calculation between the two points, we see now that there is a path! Note, the origin and destination indices need to be recalculated since the network has been transformed in a couple of ways. 
 
 
 ```r
