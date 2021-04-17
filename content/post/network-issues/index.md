@@ -100,30 +100,30 @@ Once the indices of the POIs are found, we can use the `st_network_paths` wrappe
 
 
 ```r
-# function that needs to be converted to pmap
+# returns function that includes the global sfnetwork object
+# afaik the mpa and pmap functions only refer to columns
+# within the tibble when used inside mutate
 st_network_paths_mod <- function(from, to){
   return(try(st_network_paths(railway_net, from, to)))
 }
 
+# Look at the expanded tibble of edge_paths and node_paths returned from 
+# shortest path calculation
 routes_df <- orig_dest %>%
   mutate(path = pmap(list(from = from_index, to = to_index), .f=st_network_paths_mod)) %>% 
-  unnest(cols=c(path))
+  unnest(cols=c(path)) %>% 
+  unnest(cols=c(node_paths, edge_paths)) %>% 
+  select(-from_port, -to_port)
 
 routes_df
 ```
-
 ```
-## Simple feature collection with 1 feature and 5 fields
-## Active geometry column: from_port
-## Geometry type: POINT
-## Dimension:     XY
-## Bounding box:  xmin: 1758271 ymin: 5921462 xmax: 1758271 ymax: 5921462
+## Simple feature collection with 0 features and 5 fields
+## Bounding box:  xmin: NA ymin: NA xmax: NA ymax: NA
 ## CRS:           EPSG:2193
-## # A tibble: 1 x 7
-##           from_port           to_port to_index from_index route
-##         <POINT [m]>       <POINT [m]>    <int>      <int> <int>
-## 1 (1758271 5921462) (1749904 5428126)      406        602     1
-## # … with 2 more variables: node_paths <list>, edge_paths <list>
+## # A tibble: 0 x 6
+## # … with 6 variables: to_index <int>, from_index <int>, route <int>,
+## #   node_paths <int>, edge_paths <int>, from_port <GEOMETRY [m]>
 ```
 
 ## Diagnosing issues
@@ -162,7 +162,7 @@ style="width: 100%; height: 450px;"></iframe>
 
 ## Managing the issues
 
-In my example, there were two key issues preventing a connected network: (1) too high precision of coordinates leading to small gaps between what should be connected edges and, (2) edges connected to interior nodes. The first is a data problem. The degree of rounding to the nearest 10 m is possibly a little high, but examining some of the disconnected areas identified gaps of a few metres. The second problem appears to be a peculiarity of the `sfnetworks` paradigm where [edges that aren't connected at terminal nodes are considered disconnected](https://luukvdmeer.github.io/sfnetworks/articles/preprocess_and_clean.html#subdivide-edges-1). Luckily solving these two issues is not too challenging with sensible suggestions [here](https://gis.stackexchange.com/questions/370640/how-to-connect-edges-in-a-network-even-if-they-dont-exactly-match-spatially) for the first problem and `sfnetworks` documentation on the operation `to_spatial_subdivision` for the second. 
+In my example, there were two key issues preventing a connected network: (1) too high precision of coordinates leading to small gaps between what should be connected edges and, (2) edges connected to interior nodes. The first is a data problem. The degree of rounding to the nearest 10 m is possibly a little high, but examining some of the disconnected areas identified gaps of a few metres. The second problem appears to be a peculiarity of the `sfnetworks` paradigm where [edges that aren't connected at terminal nodes are considered disconnected](https://luukvdmeer.github.io/sfnetworks/articles/preprocess_and_clean.html#subdivide-edges-1). Luckily solving these two issues is not too challenging with sensible suggestions [here](https://gis.stackexchange.com/questions/370640/how-to-connect-edges-in-a-network-even-if-they-dont-exactly-match-spatially) for the first problem and `sfnetworks` documentation on the operation `to_spatial_subdivision` for the second. I've also included a `to_simple_simple` morpher to lighten the network object. This creates more light weight visualisations and faster processing on the network. 
 
 
 ```r
@@ -179,7 +179,8 @@ st_geometry(nz_rail) <- nz_rail %>%
 # terminal nodes
 railway_net <- nz_rail %>%
   as_sfnetwork(directed=F) %>% 
-  convert(to_spatial_subdivision)
+  convert(to_spatial_subdivision) %>% 
+  convert(to_spatial_simple)
 ```
 
 
