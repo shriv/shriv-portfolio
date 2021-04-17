@@ -29,7 +29,7 @@ image:
 projects: []
 ---
 
-## Spatial networks: the power and challenge
+## Spatial networks: the challenge
 I've blogged many times previously about the insights enabled by spatial networks. But, the availability and quality of spatial network data can be challenging. I've so far utilised the vast Openstreetmap (OSM) via `osmnx` for my analyses. However, `omsnx` doesn't work well with spatial data created without the OSM taxonomy. As part of some side projects at work (and a general interest) I've wanted to work with rail network data - while available through OSM are also available in New Zealand through more "official sources" like [LINZ](https://data.linz.govt.nz/search/?q=railway) to [Kiwirail open data](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0). 
 
 
