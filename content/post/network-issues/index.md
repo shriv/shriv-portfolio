@@ -30,7 +30,10 @@ projects: []
 ---
 
 ## Spatial networks: the power and challenge
-I've blogged many times previously about the insights enabled by spatial networks. But, the availability and quality of spatial network data can be challenging. I've so far utilised the vast Openstreetmap (OSM) via `osmnx` for my analyses. However, `omsnx` doesn't work well with spatial data created without the OSM taxonomy. As part of some side projects at work (and a general interest) I've wanted to work with rail network data. I've so far been able to get versions of New Zealand rail networks from a bunch of sources - from [LINZ](https://data.linz.govt.nz/search/?q=railway) to [Kiwirail open data](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0). After a frustrating weekend trying to understand why I couldn't route on the network, I realised that I need to amend my network analysis workflow to include pre-processing and diagnostic tools. 
+I've blogged many times previously about the insights enabled by spatial networks. But, the availability and quality of spatial network data can be challenging. I've so far utilised the vast Openstreetmap (OSM) via `osmnx` for my analyses. However, `omsnx` doesn't work well with spatial data created without the OSM taxonomy. As part of some side projects at work (and a general interest) I've wanted to work with rail network data - while available through OSM are also available in New Zealand through more "official sources" like [LINZ](https://data.linz.govt.nz/search/?q=railway) to [Kiwirail open data](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0). 
+
+
+After a period of initial excitement, I ended up spending a frustrating weekend trying to understand why I couldn't route between two clearly connected points on the network. Eventually, I realised that I needed to amend my network analysis workflow to include significant pre-processing and diagnostic tools to check network connectivity. 
 
 This post goes through a simple diagnostic for checking network connectivity and highlights basic steps to create a connected, routeable network. The corrections I've applied may not be sufficient for a different network / use case but they are a great starting point. 
 
@@ -39,9 +42,7 @@ This post goes through a simple diagnostic for checking network connectivity and
 All code for this post can be found [on github](https://github.com/shriv/r-geospatial). The `renv.lock` provides the package dependencies to run this project - though it is far from a parsimonious specification as I use my projects to explore. The package can be reduced considerably as there are several package requirements (e.g. ggraph, leaflet) not needed for this particular example. 
 
 
-I downloaded the New Zealand rail network from the [kiwirail open data hub](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693) as a geodatabase but other formats are also available. 
-
-Included in the repo is a file of port locations (`port_locs` dataframe) from around the world. Though this example will only use a subset of New Zealand ports. 
+I downloaded the New Zealand rail network from the [kiwirail open data hub](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693) as a geodatabase but other formats are also available. Included in the repo is a file of port locations (`port_locs` dataframe) from around the world though this example (and some subsequent ones) will only use a subset of New Zealand ports. 
 
 
 ```r
@@ -54,15 +55,6 @@ nz_rail <- st_read(here::here("data", "kiwirail.gdb")) %>%
   filter(!Type %in% c("Crossover", "Yard Track")) %>%
   st_transform(2193) %>% 
   st_cast("LINESTRING")
-```
-
-```
-## Reading layer `KiwiRailTrack' from data source `/home/shrividya/Documents/r-geospatial/data/kiwirail.gdb' using driver `OpenFileGDB'
-## Simple feature collection with 2302 features and 4 fields
-## Geometry type: MULTILINESTRING
-## Dimension:     XY
-## Bounding box:  xmin: 167.9348 ymin: -46.59871 xmax: 178.0307 ymax: -35.39654
-## CRS:           4326
 ```
 
 
@@ -81,14 +73,20 @@ In many cases of routing problems, we're interested in the route to a point of i
 
 
 ```r
+# Isolate nodes as an sf dataframe for ease of use
 nodes_rail <- railway_net %>% activate("nodes") %>% st_as_sf()
 
+# Specify origin and destination
 from = "Auckland"
 to = "Wellington"
 
-
-orig_dest <- bind_cols(tibble(from_port = port_locs %>% filter(port_name == from) %>% pull(geometry)), 
-                       tibble(to_port = port_locs %>% filter(port_name == to) %>% pull(geometry))) %>%
+# Tibble of origin and destination and index of closest node
+orig_dest <- bind_cols(tibble(from_port = port_locs %>% 
+                                          filter(port_name == from) %>% 
+                                          pull(geometry)), 
+                       tibble(to_port = port_locs %>% 
+                                        filter(port_name == to) %>% 
+                                        pull(geometry))) %>%
   st_as_sf(crs = 2193) %>%
   mutate(to_index = st_nearest_feature(to_port, nodes_rail), 
          from_index = st_nearest_feature(from_port, nodes_rail),
@@ -101,7 +99,7 @@ Once the indices of the POIs are found, we can use the `st_network_paths` wrappe
 
 ```r
 # returns function that includes the global sfnetwork object
-# afaik the mpa and pmap functions only refer to columns
+# afaik the map and pmap functions can only refer to columns
 # within the tibble when used inside mutate
 st_network_paths_mod <- function(from, to){
   return(try(st_network_paths(railway_net, from, to)))
@@ -127,9 +125,9 @@ routes_df
 ```
 
 ## Diagnosing issues
-The difficulty with spatial networks is that they may appear connected to the naked eye but there are some insidious issues that manifest in a disconnected graph. A simple diagnostic is to examine the connectivity of all the nodes in the network. 
+The difficulty with spatial networks is that they may appear connected to the naked eye but there are some insidious issues that manifest as a disconnected graph. A simple diagnostic is to examine the connectivity of all the nodes in the network. 
 
-A useful and simple connectivity metric is the node `degree` - the number of edges connected to any node. When the degree is `1`, the node is only connected to one edge. Terminal nodes, where the tracks end, are legitimate single degree nodes. However, as the interactive graph below shows, the whole rail network is comprised of disconnected, single connection nodes. No wonder the routing algorithm couldn't find a path! 
+I've chosen the simplest connectivity metric: the node `degree` i.e. the number of edges connected to any node. When the degree is `1`, the node is only connected to a single edge. Terminal nodes, where the tracks end, are legitimate single degree nodes. However, as the interactive graph below shows, the whole rail `sfnetwork` is comprised of disconnected, single connection nodes. No wonder the routing algorithm couldn't find a path! 
 
 
 ```r
@@ -162,7 +160,14 @@ style="width: 100%; height: 450px;"></iframe>
 
 ## Managing the issues
 
-In my example, there were two key issues preventing a connected network: (1) too high precision of coordinates leading to small gaps between what should be connected edges and, (2) edges connected to interior nodes. The first is a data problem. The degree of rounding to the nearest 10 m is possibly a little high, but examining some of the disconnected areas identified gaps of a few metres. The second problem appears to be a peculiarity of the `sfnetworks` paradigm where [edges that aren't connected at terminal nodes are considered disconnected](https://luukvdmeer.github.io/sfnetworks/articles/preprocess_and_clean.html#subdivide-edges-1). Luckily solving these two issues is not too challenging with sensible suggestions [here](https://gis.stackexchange.com/questions/370640/how-to-connect-edges-in-a-network-even-if-they-dont-exactly-match-spatially) for the first problem and `sfnetworks` documentation on the operation `to_spatial_subdivision` for the second. I've also included a `to_simple_simple` morpher to lighten the network object. This creates more light weight visualisations and faster processing on the network. 
+After some time purusing the [excellent vignettes on the `sfnetworks` site](https://luukvdmeer.github.io/sfnetworks/articles/) and some googling, I found that there were two key issues preventing the creation of a connected network: 
+
+(1) too high precision of coordinates leading to small gaps between what should be connected edges and, 
+(2) edges connected to interior nodes rather than terminal nodes.
+
+The first is a data problem - where coordinate precision is slightly off possibly due to rounding precision set by the GIS export. The degree of rounding to the nearest 10 m is likely a little high and I will be looking to decrease it in the near future. The second problem appears to be a peculiarity of the `sfnetworks` paradigm where [edges that aren't connected at terminal nodes are considered disconnected](https://luukvdmeer.github.io/sfnetworks/articles/preprocess_and_clean.html#subdivide-edges-1). 
+
+Luckily, solving these two issues is not too challenging with sensible suggestions [here](https://gis.stackexchange.com/questions/370640/how-to-connect-edges-in-a-network-even-if-they-dont-exactly-match-spatially) for the first problem and `sfnetworks` documentation on the operation `to_spatial_subdivision` for the second. I've also included a `to_simple_simple` morpher to decrease the size of the network object which more light weight visualisations and, faster processing on the network. 
 
 
 ```r
@@ -190,19 +195,27 @@ If we repeat the same routing calculation between the two points, we see now tha
 
 
 ```r
+# re-extract nodes list
 nodes_rail <- railway_net %>% activate("nodes") %>% st_as_sf()
 
-orig_dest <- bind_cols(tibble(from_port = port_locs %>% filter(port_name == from) %>% pull(geometry)), 
-                       tibble(to_port = port_locs %>% filter(port_name == to) %>% pull(geometry))) %>%
+# Tibble of origin and destination and index of closest node
+orig_dest <- bind_cols(tibble(from_port = port_locs %>% 
+                                          filter(port_name == from) %>% 
+                                          pull(geometry)), 
+                       tibble(to_port = port_locs %>% 
+                                        filter(port_name == to) %>% 
+                                        pull(geometry))) %>%
   st_as_sf(crs = 2193) %>%
   mutate(to_index = st_nearest_feature(to_port, nodes_rail), 
          from_index = st_nearest_feature(from_port, nodes_rail),
          route = row_number())
 
+# Recalculate route
 routes_df <- orig_dest %>%
   mutate(path = pmap(list(from = from_index, to = to_index), .f=st_network_paths_mod)) %>% 
   unnest(cols=c(path))
 
+# Extract and enrich route with coordinates for visualisation
 auck_wlg <- routes_df %>% 
   unnest(edge_paths) %>% 
   select(edge_paths) %>% 
@@ -219,7 +232,7 @@ ggplot() +
   geom_sf(data=auck_wlg, colour="red") 
 ```
 
-![](unnamed-chunk-8-1.png)<!-- -->
+![](unnamed-chunk-8-1.png)
 
 
 ## Why does routing work now?
