@@ -41,12 +41,12 @@ This post goes through a simple diagnostic for checking network connectivity and
 All code for this post can be found [on github](https://github.com/shriv/r-geospatial). The `renv.lock` provides the package dependencies to run this project - though it is far from a parsimonious specification as I use my projects to explore. The package can be reduced considerably as there are several package requirements (e.g. ggraph, leaflet) not needed for this particular example. 
 
 
-I downloaded the New Zealand rail network from the [kiwirail open data hub](https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693) as a geodatabase but other formats are also available. Included in the repo is a file of port locations (`port_locs` dataframe) from around the world though this example (and some subsequent ones) will only use a subset of New Zealand ports. 
+I downloaded the New Zealand rail network from the [kiwirail open data hub](https://data-kiwirail.opendata.arcgis.com/datasets/kiwirail-track-centreline) as a geodatabase but other formats are also available. Included in the repo is a file of port locations (`port_locs` dataframe) from around the world though this example (and some subsequent ones) will only use a subset of New Zealand ports. 
 
 
 ```r
 # kiwirail data from 
-# https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693
+# https://data-kiwirail.opendata.arcgis.com/datasets/kiwirail-track-centreline
 
 # Basic filter and transform of rail network from Kiwirail
 # only keeping tracks
@@ -161,7 +161,9 @@ style="width: 100%; height: 450px;"></iframe>
 
 After some time purusing the [excellent vignettes on the `sfnetworks` site](https://luukvdmeer.github.io/sfnetworks/articles/) and some googling, I found that there were two key issues preventing the creation of a connected network: 
 
+
 (1) too high precision of coordinates leading to small gaps between what should be connected edges and, 
+
 (2) edges connected to interior nodes rather than terminal nodes.
 
 The first is a data problem - where coordinate precision is slightly off possibly due to rounding precision set by the GIS export. The degree of rounding to the nearest 10 m is likely a little high and I will be looking to decrease it in the near future. The second problem appears to be a peculiarity of the `sfnetworks` paradigm where [edges that aren't connected at terminal nodes are considered disconnected](https://luukvdmeer.github.io/sfnetworks/articles/preprocess_and_clean.html#subdivide-edges-1). 

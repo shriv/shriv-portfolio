@@ -43,7 +43,7 @@ All code for this post can be found [on github](https://github.com/shriv/r-geosp
 
 ```r
 # kiwirail data from 
-# https://data-kiwirail.opendata.arcgis.com/datasets/13d266cb6dd141879daa76d993e2b0cc_0/data?geometry=103.420%2C-51.783%2C-116.834%2C-28.693
+# https://data-kiwirail.opendata.arcgis.com/datasets/kiwirail-track-centreline
 
 # Basic filter and transform of rail network from Kiwirail
 # only keeping tracks
@@ -88,7 +88,9 @@ st_network_paths_mod <- function(from, to){
 ## Create origin destination (OD) data
 In this example, we don't have a pre-set OD matrix so we need to create our own. For some aspects of my work, I'm interested in freight flows between New Zealand ports so I have created a simple example of that use case. The steps to create an OD matrix are a simple extension of the previous post - the main differences being: 
 
+
 (1) the `crossing` function to create all combinations of two vectors and, 
+
 (2) a simple `rnorm` function to generate some fake flows per origin-destination combination. 
 
 
@@ -120,7 +122,7 @@ routes_df <- orig_dest %>%
 
 
 ## Visualise all routes
-All the edges involved in a route are containerd in the `edge_paths` list. Once expanded out fully with `unnest`, we can join the edge geometries from the `sfnetworks` dataframe for a simple visualisation. From a cursory glance, it seems like all the routes that could be found have been. Many port-port combinations have no routes because they are on different islands. Terrestrial infrastructure networks in New Zealand have two components - one component for Te Ika a Maui (North Island) and another for Te Waipounamu (South Island). Noting, the existence of the two components because there is no land bridge connecting the islands. 
+All the edges involved in a route are contained in the `edge_paths` list. Once expanded out fully with `unnest`, we can join the edge geometries from the `sfnetworks` dataframe for a simple visualisation. From a cursory glance, it seems like all the routes that could be found have been. Many port-port combinations have no routes because they are on different islands. Terrestrial infrastructure networks in New Zealand have two components - one component for Te Ika a Maui (North Island) and another for Te Waipounamu (South Island). Noting, the existence of the two components because there is no land bridge connecting the islands. 
 
 
 ```r
@@ -141,7 +143,7 @@ ggplot() +
   geom_sf(data=port_port, colour="red") 
 ```
 
-![](unnamed-chunk-3-1.png)<!-- -->
+![](unnamed-chunk-3-1.png)
 
 
 ## Aggregating flows
@@ -188,5 +190,5 @@ ggplot() +
                         name = "")
 ```
 
-![](unnamed-chunk-4-1.png)<!-- -->
+![](unnamed-chunk-4-1.png)
 
