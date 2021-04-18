@@ -141,7 +141,7 @@ ggplot() +
   geom_sf(data=port_port, colour="red") 
 ```
 
-![](infrastructure-flows_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](unnamed-chunk-3-1.png)<!-- -->
 
 
 ## Aggregating flows
@@ -188,5 +188,5 @@ ggplot() +
                         name = "")
 ```
 
-![](infrastructure-flows_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](unnamed-chunk-4-1.png)<!-- -->
 
