@@ -147,21 +147,23 @@ ggplot() +
 
 
 ## Aggregating flows
-Since the routes dataframe can be unnested to give one edge per route per row, we can group by the edge and summarise the relevant property per edge. Since we're interested in all the flows passing through any given edge that is part of the port - port routes, we just add up all the flow values per origin - destination combination.
+Since the routes dataframe can be unnested to give one edge per route per row, we can group by the edge and summarise the relevant property per edge. The property we're intersted in is the inherited origin-destination flow value that every edge in particular route inherits. Thus, to get the overall flow passing through any edge in the network, we summarise across all routes passing through it by adding up all the flow values. 
 
 
 ```r
 # Group by every edge that has a route passing through
 # Aggregate all routes  that pass through any given edge
 # Aggregation by summing flow values
-flows_df <- orig_dest %>%
-  mutate(path = map2(.x = from_index, .y = to_index, .f=st_network_paths_mod)) %>% 
-  unnest(cols=c(path)) %>% 
-  unnest(cols = c(edge_paths)) %>% 
+flows_df <- routes_df %>% 
+  unnest(cols=c(edge_paths)) %>%
   group_by(edge_paths) %>% 
   summarise(flow = sum(flow))
+```
 
+## Visualise flows
+Since the flow values between the ports were randomly assigned, there isn't much meaning in the visualisation. However, one useful aspect to note is the association of the "nearest rail port". Most ports in New Zealand, except one, are on a railway line. Port Nelson (at the top of the South Island) is the only isolated red dot without a grey dot underneath. It's closest rail node is at Picton. In an actual analysis, we would have to check whether the nearest port identified by the algorithm is meaningful for the use case. It could be that rail traffic might stop elsewhere, that is more conveniently located to a short road transfer route rather than the closest node in the rail network. 
 
+```r
 # Visualise aggregated flows
 ggplot() + 
   geom_sf(data = railway_net %>%
@@ -188,7 +190,7 @@ ggplot() +
                         labels = c("nearest rail port", "original port"),
                         guide = "legend", 
                         name = "")
-```
 
+```
 ![](unnamed-chunk-4-1.png)
 
