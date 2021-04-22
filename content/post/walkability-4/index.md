@@ -174,7 +174,7 @@ To pick out suburban character (in terms of playground accessibility), we need a
 
 We can modify the standard layout slightly to get both the quadrants and the average bands by: (1) normalising the suburban means (for both $\mu$ and $\sigma$) with the city means and, (2) plotting the city level credible intervals as a cental cross. The resulting quadrants now represent combinations of suburban $\mu$ and $\sigma$ relative to the city.
 
-![](../images/2019-03-12-Modelling-accessibility-by-suburb/output_45_0.png)
+![](output_45_0.png)
 
 The quadrants represent _accessibility character_ which have a simplistic interpretation.
 
