@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "WORKSHOP: Analysing geospatial connectivity to understand a city"
-event: "FOSS4G SoTM Oceania 2019"
+title: "Walking to the park on your computer - adventures in geospatial network analysis"
+event: "Maptime Wellington July 2021"
 event_url:
 location:
 address:
@@ -12,18 +12,16 @@ address:
   postcode:
   country:
 summary:
-abstract: "Static or interactive maps can reveal useful patterns and insights. For example, layering accident locations on a basemap can highlight hotspots of poor road safety. These simple data overlays can be extended to an integrated analysis with the road network for deeper insight - like accident hotspots on road segments that bottleneck commuter flows. As denizens of a city we primarily interact with the built urban environment via its streets, roads and paths. Hence, intuitive questions of the 'Urban Experience' must involve the geospatial road network. 
-
-In this workshop, we'll use Python and the packages, osmnx and pandana, to characterise Wellington: the cool little capital of New Zealand with a unique topography. Using omsnx, pandana and data of the built environment (from OpenStreetMap and Wellington City Council open data), we can quantify how Wellington functions as a city."
+abstract:"Walkability can be measured in many ways but a simple proxy of local walkability is the distance (and travel time) to a nearby amenity - like the local playground. Using geospatial network analysis, we can "walk" to many parks (from anywhere) and learn about how walkable our cities and towns really are."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2019-11-12
+date: 2021-07-21
 date_end: 
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2020-12-08T12:24:14+13:00
+publishDate: 2021-08-07T14:39:48+12:00
 
 authors: []
 tags: []
@@ -48,10 +46,10 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides:
+url_slides: https://github.com/shriv/maptime-jul21/blob/main/index.slides.html
 
-url_code: https://github.com/shriv/foss4g-workshop
-url_pdf: https://github.com/shriv/foss4g-workshop/blob/master/notebooks/applications.ipynb
+url_code: https://github.com/shriv/maptime-jul21
+url_pdf:
 url_video:
 
 # Markdown Slides (optional).

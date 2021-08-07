@@ -25,7 +25,7 @@ date_end:
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2020-12-08T12:24:14+13:00
+publishDate: 2021-08-07T14:43:00+12:00
 
 authors: []
 tags: []
@@ -52,7 +52,7 @@ image:
 # Optional filename of your slides within your talk's folder or a URL.
 url_slides:
 
-url_code: 
+url_code:
 url_pdf: https://github.com/shriv/statsnz-rap/blob/master/RAPping%20in%20the%20public%20sector.pdf
 url_video:
 

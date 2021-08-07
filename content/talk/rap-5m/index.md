@@ -21,7 +21,7 @@ date_end:
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2020-12-08T12:24:14+13:00
+publishDate: 2021-08-07T14:41:39+12:00
 
 authors: []
 tags: []
@@ -48,7 +48,7 @@ image:
 # Optional filename of your slides within your talk's folder or a URL.
 url_slides:
 
-url_code: 
+url_code:
 url_pdf: https://github.com/shriv/applied-data-conf-21-preso/blob/master/presentation.pdf
 url_video: https://www.youtube.com/watch?v=D5eCVZXq96A&t=1770s
 
