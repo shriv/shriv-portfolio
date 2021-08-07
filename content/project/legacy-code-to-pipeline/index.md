@@ -39,3 +39,10 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
+
+Legacy code is a burden for any developer. Depending on the state of the code, maintenance and improvements are not necessarily simple. From my experience in the public sector, legacy code for analyses and ETL (Extract, Transform, Load) are neither written by developers who were conversant in modern software development practices (like version control, automation, unit testing etc.) nor is the code particularly well-documented. As a result, maintenance is time consuming, manual and unwieldy. As part of my recent role in the government, inherited code bases became a nightmare to maintain and use until I discovered the delightful trifecta of `jupyter`, `saspy` and `exchangelib`. 
+
+`jupyter`: creates a trivial single click "pipeline" of steps that can be documented and explained at a high level
+`saspy`: allows python to send SAS code to the installed SAS program 
+`exchangelib`: allows python to access Outlook mailboxes through the Exchange Web Services API for querying emails, download attachments etc. 
+
