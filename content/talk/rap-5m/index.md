@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "RAPping in the public sector: binding your legacy code into a pipeline with Python"
+title: "RAPping in the public sector (in 5 minutes)"
 event: "Innovations in Applied Data Symposium"
 event_url:
 location:

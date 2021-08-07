@@ -46,7 +46,7 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides: https://github.com/shriv/maptime-jul21/blob/main/index.slides.html
+url_slides: https://shriv.github.io/maptime-jul21/index.slides#/
 
 url_code: https://github.com/shriv/maptime-jul21
 url_pdf:

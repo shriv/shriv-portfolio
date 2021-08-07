@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "RAPping in the public sector"
+title: "RAPping in the public sector (long version)"
 event: "Statistics NZ seminar"
 event_url:
 location:
