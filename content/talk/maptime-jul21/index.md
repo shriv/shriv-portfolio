@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Walking to the park on your computer - adventures in geospatial network analysis"
-event: "Maptime Wellington July '21"
+event: "Maptime Wellington July 2021"
 event_url:
 location:
 address:
