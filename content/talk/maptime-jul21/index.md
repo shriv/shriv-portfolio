@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "Walkability can be measured in many ways but a simple proxy of local walkability is the distance (and travel time) to a nearby amenity - like the local playground. Using geospatial network analysis, we can "walk" to many parks (from anywhere) and learn about how walkable our cities and towns really are."
+abstract: "Walkability can be measured in many ways but a simple proxy of local walkability is the distance (and travel time) to a nearby amenity - like the local playground. Using geospatial network analysis, we can \"walk\" to many parks (from anywhere) and learn about how walkable our cities and towns really are."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
