@@ -29,15 +29,6 @@ image:
 projects: []
 ---
 
-### test shortcode
-{{< mermaid align="left" theme="neutral" >}}
-pie
-    title French Words I Know
-    "Merde" : 50
-    "Oui" : 35
-    "Alors" : 10
-    "Non" : 5
-{{< /mermaid >}}
 
 ### the ubiquity of bad processes
 Public sector, indeed even private sector, analytics are rife with silos and people-driven pipelines. Instead of building processes with minimal manual interference, pipelines are ususally a  mash of the metaphorical ductape and frenetic manual steps resulting in blood, sweat and tears for any analyst who subsequently picks up the work. 
@@ -45,7 +36,7 @@ Public sector, indeed even private sector, analytics are rife with silos and peo
 Manual processes inherently need to be overseen and thus consume analyst headspace: to start, pause, stop, make changes, perform checks etc. Unfortunately, this headspace overload can have costly outcomes due to inevitable human error. Fortunately, most of these steps can be automated allowing the analyst to dedicate their skills to the gnarly checks or better yet, to using the data and providing business-relevant value. 
 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 data --> a[Put in Excel]
 a --> b[Run manual calculations]
@@ -54,8 +45,8 @@ b --> c[Copy output <br> to <br> Excel / Word]
 c --> e[Review]
 e --> |Changes needed| b
 e  --> |Changes needed| data
+{{< /mermaid >}}
 
-```
 
 ### rap as a paradigm
 One nifty framework for moving from manual processes is RAPping i.e. building reproducible analytical pipelines. Coined by the UK Government Statistical Service, [RAP](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/) brings in concepts and practices from data engineering, devops and software carpentry domains to analysts in the public sector. 
@@ -72,7 +63,7 @@ These practices include:
 ### rap to include data engineering
 Despite its utility, RAP focuses primarily on converting data from a commonly-managed data store into analytical outputs (reports, tables, models etc). However, in the infrastructure-poor environments of public sector, data is often not in an accessible place with automated process to transform it in a form fit for subsequent RAPping. This means the concepts of RAP need to be brought further back into the data analysis process - into the 'data engineering domain'. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph LR
 rd[Raw data source] --> lc[Local copy]
 lc --> pr1[Transformation scripts]
@@ -80,12 +71,13 @@ pr1 --> pd[Processed data]
 pd --> rep[Reports]
 pd --> tab[Tables]
 pd --> db[Dashboards]
-```
+{{< /mermaid >}}
+
 
 ### rapping with legacy code
 For any analyst who has inherited a pre-existint data processing code base replete with manual management, it's not trivial to rewrite it with RAP principles. Certain complexities in the code are not trivial to move and, some data extraction steps are challenging. One example of a hard to move legacy code base has the following steps: 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 flowchart LR
 	
 	subgraph EXTRACT
@@ -102,7 +94,8 @@ flowchart LR
 	end
 
 fa[feed A] -->|automated <br> delivery| EXTRACT --> TRANSFORM 
-```
+{{< /mermaid >}}
+
 
 ### why python
 Python is a modern, multi-paradigm, evolving, open source programming language. It is used widely across many domains - from web development to data science. Due to its breadth of use and popularity, there is an incredible ecosystem of packages. 
@@ -115,7 +108,7 @@ Manual steps like the following can all be done using Python.
 
 Python and its rich ecosystem of packages can eveb be used for complex pipelines that need to interface between different programs. Here, python libraries like `exhangelib` and `saspy` can connect to APIs and programs like Outlook and SAS respectively. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 f[feed A] --> e[Outlook inbox]
 beq --> |exchangelib| e
@@ -128,12 +121,13 @@ subgraph JUPYTER NOTEBOOK
 	rd --> |saspy| pws[[Process with SAS]]
 	pws --> pd[Processed data]
 end
-```
+{{< /mermaid >}}
+
 
 ### getting data with APIs
 Application programming interfaces (APIs) allows applications to communicate with each other. The Outlook email program has a rich API behind it called Exchange Web Services (EWS). Applications (like our RAP extract data application) can send EWS queries to push or pull data to Outlook objects like emails, contacts and calendars. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 f[feed A] --> e[Outlook inbox]
 beq --> |exchangelib| e
@@ -142,7 +136,8 @@ subgraph EXTRACT
 	beq --> |exchangelib <br> pandas|gsd[[Get and save data]]
 	gsd --> rd[Raw data]
 end
-```
+{{< /mermaid >}}
+
 
 ### running sas through python
 It's worth noting that there are actually two ways or running SAS outside the SAS program: 
@@ -165,14 +160,15 @@ saspy is able to generate SAS queries from python commands. However, running exi
 - "Mutable" components are created in python
 - The immutable and mutable are brought together with Python's f-strings
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 sc[SAS Code] --> |yaml| pws
 subgraph TRANSFORM
 	rd[Raw data] --> |saspy| pws[[Process with SAS]]
 	pws --> pd[Processed data]
 end
-```
+{{< /mermaid >}}
+
 
 ### simple linear workflows with jupyter
 > The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
