@@ -36,7 +36,7 @@ Public sector, indeed even private sector, analytics are rife with silos and peo
 Manual processes inherently need to be overseen and thus consume analyst headspace: to start, pause, stop, make changes, perform checks etc. Unfortunately, this headspace overload can have costly outcomes due to inevitable human error. Fortunately, most of these steps can be automated allowing the analyst to dedicate their skills to the gnarly checks or better yet, to using the data and providing business-relevant value. 
 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 data --> a[Put in Excel]
 a --> b[Run manual calculations]
@@ -45,7 +45,7 @@ b --> c[Copy output <br> to <br> Excel / Word]
 c --> e[Review]
 e --> |Changes needed| b
 e  --> |Changes needed| data
-```
+{{< /mermaid >}}
 
 
 ### RAP as a paradigm
@@ -53,7 +53,7 @@ One nifty framework for moving from manual processes is RAPping i.e. building re
 
 > Reproducible Analytical Pipelines (RAPs) are automated statistical and analytical processes. They incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.
 
-These practices include: 
+Thsese practices include: 
 
 - Substituting manual steps with code 
 - Using modern, open source programming languages 
@@ -64,7 +64,7 @@ These practices include:
 ### RAP to include data engineering
 Despite its utility, RAP focuses primarily on converting data from a commonly-managed data store into analytical outputs (reports, tables, models etc). However, in the infrastructure-poor environments of public sector, data is often not in an accessible place with automated process to transform it in a form fit for subsequent RAPping. This means the concepts of RAP need to be brought further back into the data analysis process - into the 'data engineering domain'. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph LR
 rd[Raw data source] --> lc[Local copy]
 lc --> pr1[Transformation scripts]
@@ -72,7 +72,7 @@ pr1 --> pd[Processed data]
 pd --> rep[Reports]
 pd --> tab[Tables]
 pd --> db[Dashboards]
-```
+{{< /mermaid >}}
 
 
 ### RAPping with legacy code
@@ -84,14 +84,13 @@ Python is a modern, multi-paradigm, evolving, open source programming language. 
 
 ### Python as glue
 Manual steps like the following can all be done using Python. 
-
 - Changing file names in scripts to the latest data
 - Getting data deliveries from Outlook inboxes
 - Running scripts in order 
 
 Python and its rich ecosystem of packages can eveb be used for complex pipelines that need to interface between different programs. Here, Python libraries like `exhangelib` and `saspy` can connect to APIs and programs like Outlook and SAS respectively. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 f[feed A] --> e[Outlook inbox]
 beq --> |exchangelib| e
@@ -104,13 +103,13 @@ subgraph Jupyter NOTEBOOK
 	rd --> |saspy| pws[[Process with SAS]]
 	pws --> pd[Processed data]
 end
-```
+{{< /mermaid >}}
 
 
 ### Getting data with Python wrappers for APIs
 Application programming interfaces (APIs) allows applications to communicate with each other. The Outlook email program has a rich API behind it called Exchange Web Services (EWS). Applications (like our RAP extract data application) can send EWS queries to push or pull data to Outlook objects like emails, contacts and calendars. 
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 f[feed A] --> e[Outlook inbox]
 beq --> |exchangelib| e
@@ -119,7 +118,7 @@ subgraph EXTRACT
 	beq --> |exchangelib <br> pandas|gsd[[Get and save data]]
 	gsd --> rd[Raw data]
 end
-```
+{{< /mermaid >}}
 
 
 ## Running SAS through Python
@@ -143,14 +142,14 @@ saspy is able to generate SAS queries from Python commands. However, running exi
 - "Mutable" components are created in Python
 - The immutable and mutable are brought together with Python's f-strings
 
-```mermaid
+{{< mermaid align="left" theme="neutral" >}}
 graph TD
 sc[SAS Code] --> |yaml| pws
 subgraph TRANSFORM
 	rd[Raw data] --> |saspy| pws[[Process with SAS]]
 	pws --> pd[Processed data]
 end
-```
+{{< /mermaid >}}
 
 
 ## Leveraging Jupyter notebooks
