@@ -1,13 +1,2 @@
-<script async type="application/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@8.13.3/dist/mermaid_min.js">
-    var config = {
-      startOnLoad:true,
-      theme:'{{ if .Get "theme" }}{{ .Get "theme" }}{{ else }}dark{{ end }}',
-      align:'{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}'
-    };
-    mermaid.initialize(config);
-  </script>
-  
-  <div class="mermaid">
-    {{.Inner}}
-  </div>
-  
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="mermaid" align="{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}">{{ safeHTML .Inner }}</div>
