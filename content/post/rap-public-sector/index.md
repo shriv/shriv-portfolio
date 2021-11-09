@@ -29,6 +29,16 @@ image:
 projects: []
 ---
 
+### test shortcode
+{{< mermaid align="left" theme="neutral" >}}
+pie
+    title French Words I Know
+    "Merde" : 50
+    "Oui" : 35
+    "Alors" : 10
+    "Non" : 5
+{{< /mermaid >}}
+
 ### the ubiquity of bad processes
 Public sector, indeed even private sector, analytics are rife with silos and people-driven pipelines. Instead of building processes with minimal manual interference, pipelines are ususally a  mash of the metaphorical ductape and frenetic manual steps resulting in blood, sweat and tears for any analyst who subsequently picks up the work. 
 
