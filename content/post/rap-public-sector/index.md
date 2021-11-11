@@ -47,7 +47,7 @@ e  --> |Changes needed| data
 {{< /mermaid >}}
 
 
-### RAP to overcome bad processes
+## RAP to overcome bad processes
 One nifty framework for moving from manual processes is RAP or reproducible analytical pipelines. Coined by the UK Government Statistical Service, [RAP](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/) brings in concepts and practices from data engineering, devops and software carpentry domains to analysts in the public sector. 
 
 > Reproducible Analytical Pipelines (RAPs) are automated statistical and analytical processes. They incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.
@@ -61,7 +61,6 @@ These practices include:
 - Bringing in code review practices
 
 
-### RAP to include data engineering
 Despite its utility, RAP focuses primarily on converting data from a commonly-managed data store into analytical outputs (reports, tables, models etc). However, in the infrastructure-poor environments of many public sector organisations, data is often inaccessible with no automated process that transforms it from raw data to a form fit for subsequent RAPping. This means the concepts of RAP need to be brought further back into the data analysis process - into the 'data engineering domain'. 
 
 {{< mermaid align="left" theme="neutral" >}}
