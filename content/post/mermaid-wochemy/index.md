@@ -41,8 +41,8 @@ Unfortunately, I had some issues with this approach. Wowchemy is still using `me
 I ended up abandoning the wowchemy native approach and using [mermaid as a third party plugin](https://wowchemy.com/docs/hugo-tutorials/extending-wowchemy/#add-scripts-js). Following instructions from [here](https://skeptric.com/diagrams-in-hugo/#implementation), I copied in the JS script reference to `layouts/partials/custom_js.html` and the shortcodes to `layouts/shortcodes/mermaid.html`. 
 
 Mermaid can now be called with the shortcode as follows:
-```
 
+```mermaid
 {{</* mermaid align="left" theme="neutral" */>}}
 flowchart LR
 	
