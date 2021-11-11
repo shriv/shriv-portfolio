@@ -109,13 +109,7 @@ Python is a modern, multi-paradigm, evolving, open source programming language. 
 
 Python and its rich ecosystem of packages can be used be used as a glue, or interface between different programs. Packages like `exhangelib` and `saspy` can connect to APIs and programs like Outlook and SAS respectively. More on how these packages facilitate automation in the following sections. 
 
-Another aspect of pythonic glue is `gluing` together a linear pipeline / workflow in a [Jupyter notebook](https://jupyter.org/). Cells in the notebook can be run in any order manually but using the `Run All` command sets up a linear execution - cells are run in series giving immediate linear dependency. Jupyter notebooks also have additional features like:
-
-- Including documentation alongside code execution - easily updated while pipeline development is still in flux
-- Including checks (as tables or graphs) as part of the pipeline making the executed notebook a log of the processing run that can be saved for posterity. 
-- Using Python's `try execpt` can be used to raise errors and stop execution of the pipeline to give the analyst time to correct.
-- Since executed outputs are stored in memory so with a sensible structure, it can be quite easy to re-run the notebook from an intermediate point rather than run the entire process again after correcting any issues. 
-
+Another aspect of pythonic glue is `gluing` together a linear pipeline / workflow in a [Jupyter notebook](https://jupyter.org/). Cells in the notebook can be run in any order manually but using the `Run All` command sets up a linear execution - cells are run in series giving immediate linear dependency. 
 
 {{< mermaid align="left" theme="neutral" >}}
 graph TD
@@ -131,6 +125,13 @@ subgraph Jupyter NOTEBOOK
 	pws --> pd[Processed data]
 end
 {{< /mermaid >}}
+
+Jupyter notebooks also have additional features like:
+
+- Including documentation alongside code execution - easily updated while pipeline development is still in flux
+- Including checks (as tables or graphs) as part of the pipeline making the executed notebook a log of the processing run that can be saved for posterity. 
+- Using Python's `try execpt` can be used to raise errors and stop execution of the pipeline to give the analyst time to correct.
+- Since executed outputs are stored in memory so with a sensible structure, it can be quite easy to re-run the notebook from an intermediate point rather than run the entire process again after correcting any issues. 
 
 
 ## Down in the details
