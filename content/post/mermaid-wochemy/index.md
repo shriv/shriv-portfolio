@@ -85,8 +85,9 @@ fa[feed A] -->|automated <br> delivery| EXTRACT --> TRANSFORM
 {{< /mermaid >}}
 
 
+Testing testing
+
 ```mermaid
-{{< mermaid align="left" theme="neutral" >}}
 flowchart LR
 	
 	subgraph EXTRACT
@@ -103,5 +104,4 @@ flowchart LR
 	end
 
 fa[feed A] -->|automated <br> delivery| EXTRACT --> TRANSFORM 
-{{< /mermaid >}}
 ```
