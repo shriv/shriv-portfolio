@@ -42,7 +42,7 @@ I ended up abandoning the wowchemy native approach and using [mermaid as a third
 
 Mermaid can now be called with the shortcode as follows:
 
-```
+```shell
 {{</* mermaid align="left" theme="neutral" */>}}
 flowchart LR
 	
@@ -83,25 +83,3 @@ flowchart LR
 
 fa[feed A] -->|automated <br> delivery| EXTRACT --> TRANSFORM 
 {{< /mermaid >}}
-
-
-Testing testing
-
-```mermaid
-flowchart LR
-	
-	subgraph EXTRACT
-		direction TB
-			oi[Outlook inbox] --> |Download manually|gs[Get and save data]
-			gs --> |Rename file <br> change column types|rd[Raw data store]
-	end
-	
-	subgraph TRANSFORM
-		direction TB
-            e[Raw data store] -->|Manual filename change| sas_read
-			sas_read[Read raw data <br> into SAS format] --> |Manual filename change| sas_trans[Transform data]
-			sas_trans --> data[Processed data]
-	end
-
-fa[feed A] -->|automated <br> delivery| EXTRACT --> TRANSFORM 
-```
