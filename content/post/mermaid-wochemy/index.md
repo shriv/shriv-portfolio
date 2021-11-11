@@ -39,7 +39,7 @@ Unfortunately, I had some issues with this approach. Wowchemy is still using `me
 ## How to us the latest / custom version of mermaid
 I ended up abandoning the wowchemy native approach and using [mermaid as a third party plugin](https://wowchemy.com/docs/hugo-tutorials/extending-wowchemy/#add-scripts-js). Following instructions from [here](https://skeptric.com/diagrams-in-hugo/#implementation), I copied in the JS script reference to `layouts/partials/custom_js.html` and the shortcodes to `layouts/shortcodes/mermaid.html`. 
 
-Mermaid can now be called as follows `{{< mermaid align="left" theme="neutral" >}} {{ < /mermaid >}}`. And flowcharts with different direction to the subgraphs can be easily rendered. 
+Mermaid can now be called with the shortcode. And flowcharts with different direction to the subgraphs can be easily rendered. 
 
 {{< mermaid align="left" theme="neutral" >}}
 flowchart LR
