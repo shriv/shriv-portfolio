@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Mermaid Wochemy"
+title: "Mermaid in wowchemy sites"
 subtitle: ""
 summary: ""
 authors: []
@@ -31,18 +31,8 @@ projects: []
 ## Mermaid diagrams for wowchemy sites
 According to the [instructions on wowchemy docs](https://wowchemy.com/docs/content/writing-markdown-latex/#diagrams), it's quite easy to include mermaid diagrams. Just need to change the `diagram` parameter in `config/params.toml` to `true`. With this change, the diagram is rendered when the code is within a mermaid code block (using simple backticks markup). 
 
-```
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
-```
 
 ## Default version of Mermaid in wowchemy is problematic
-
 Unfortunately, I had some issues with this approach. Wowchemy is still using `mermaid 8.8.4` as seen in the [js plugin list](https://github.com/wowchemy/wowchemy-hugo-themes/blob/0d97991430036417584e1c951bc58c434ccbf1a3/wowchemy/data/assets.toml#L59). The main issue being that the current version is `8.13.0` and features like rendering `flowcharts` with different directions to `subgraphs` are not available. A secondary issue was slowness in the render. Perhaps, it was my poor internet but the diagrams wouldn't always render with the default plugin location. 
 
 
