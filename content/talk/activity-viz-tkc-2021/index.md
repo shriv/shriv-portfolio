@@ -18,9 +18,9 @@ In this presentation, we will demonstrate how to create travel patterns from the
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2021-12-01T09:00:00+12:00
-date_end: 2021-12-01T18:00:00+12:00
-all_day: true
+date: 2021-12-01
+date_end: 
+all_day: false
 
 # Schedule page publish date (NOT talk date).
 publishDate: 2022-05-14T10:02:13+12:00
