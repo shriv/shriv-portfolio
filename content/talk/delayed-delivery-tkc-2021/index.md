@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "The COVID-19 pandemic instigated a series of extensive global and local disruptions in supply chains. During the pre-pandemic "normal", the health of NZ freight movements could be inferred from the quarterly freight statistics provided by the Freight Information Gathering System (FIGS). However, these indicators have struggled to provide useful insights into supply chain system adjustments and shifts due to the pandemic. The difficulty has been driven by a mismatch - FIGS indicators are macroscopic while process-level granularity is required to understand the changes. 
+abstract: "The COVID-19 pandemic instigated a series of extensive global and local disruptions in supply chains. During the pre-pandemic \"normal\", the health of NZ freight movements could be inferred from the quarterly freight statistics provided by the Freight Information Gathering System (FIGS). However, these indicators have struggled to provide useful insights into supply chain system adjustments and shifts due to the pandemic. The difficulty has been driven by a mismatch - FIGS indicators are macroscopic while process-level granularity is required to understand the changes. 
 
 In this presentation, we will showcase the value of moving from macroscopic indicators to event-based analytics that better mirror real world processes. Furthermore, coupling process-relevant metrics with statistical models can provide useful insights and monitoring of observed shifts in domestic supply chain processes."
 

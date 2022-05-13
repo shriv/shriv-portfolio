@@ -14,7 +14,7 @@ address:
 summary:
 abstract: "Understanding when, where and how travel happens is key to understanding demands placed on the transport system. However, aggregating travel pattern typologies from individual travel behaviours can be challenging.  
 
-In this presentation, we will demonstrate how to create travel patterns from the NZ Household Travel Survey (HTS) data. Using clustering algorithms, we can create and visualise different typologies of travel behaviour and derive the "medioid" (most common) pattern for each typology. These approaches have value in understanding both variability in travel behaviour and who contributes to them." 
+In this presentation, we will demonstrate how to create travel patterns from the NZ Household Travel Survey (HTS) data. Using clustering algorithms, we can create and visualise different typologies of travel behaviour and derive the \"medioid\" (most common) pattern for each typology. These approaches have value in understanding both variability in travel behaviour and who contributes to them." 
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
