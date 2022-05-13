@@ -6,7 +6,7 @@ title: Shrividya Ravi
 superuser: true
 
 # Role/position
-role: Data Scientist (Snr. Analyst)
+role: Data Scientist (Principal Analyst)
 
 # Organizations/Affiliations
 organizations:
