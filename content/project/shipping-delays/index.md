@@ -40,11 +40,9 @@ url_video: ""
 slides: ""
 ---
 
-The movement of ships and depdendence on international ports has been left alone as a market optimisation by New Zealand policymakers. That is, the competitive market will converge on optimisied routes given maritime network structure, demand and port capacity / attractiveness. However, the cascading set of labourforce disruptions and stringent COVID-19 policies have resulted in significant delays and disruptions to ship schedules. 
+The movement of ships and depdendence on international ports has been left to the market by New Zealand policymakers. That is, competitive market forces will converge on optimal routes given maritime network structure, demand and port capacity / attractiveness. However, a cascading set of labourforce disruptions and stringent COVID-19 policies have resulted in significant delays to container ship voyages since the onset of the global pandemic. 
 
-With port visits extracted from AIS (Automatic Identification System)m GPS-like data of ship movements, we can look beyond the territorial waters of the country to get the full international voyage component of ships that visit New Zealand. 
-
-Given New Zealand's geographical position as well as its wide set of trading partners, we see considerable variation in both the absolute value as well as the shape. Longer routes like `Australia-Eastern Asia-New Zealand` and `Latin America-New Zealand-Northern America` have the most stable shape (symmetric Gaussian/Lorentzian) while voyages on the considerably closer Trans-Tasman route (`Australia-New Zealand`) are heavily skewed. A long tail is also seen for voyages on the important `Australia-New Zealand-Southeastern Asia` route, connecting New Zealand to key trans-shipment hubs like Singapore and Port Klang. 
+Given New Zealand's geographical position as well as its wide set of trading partners, we see considerable variation in both the absolute value as well as the shape of voyage durations. Longer routes like `Australia-Eastern Asia-New Zealand` and `Latin America-New Zealand-Northern America` have the most stable shape (symmetric Gaussian/Lorentzian) while voyages on the considerably closer Trans-Tasman route (`Australia-New Zealand`) are heavily skewed. A long tail is also seen for voyages on the important `Australia-New Zealand-Southeastern Asia` route, connecting New Zealand to key trans-shipment hubs like Singapore and Port Klang. 
 
 ![](voyage-distributions.png)
 
