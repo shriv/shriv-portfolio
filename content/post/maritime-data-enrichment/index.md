@@ -6,6 +6,7 @@ subtitle: "Use case of adding container shipping aspects to AIS data"
 summary: ""
 authors: []
 tags: []
+toc: true
 categories: []
 date: 2023-01-25T10:51:00+13:00
 lastmod: 2023-01-25T10:51:00+13:00
