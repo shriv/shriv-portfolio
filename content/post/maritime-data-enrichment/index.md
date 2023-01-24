@@ -30,12 +30,14 @@ projects: []
 ---
 
 ## Introduction
-A single data source can provide myriad perspectives with judicious data enrichment and entity resolution. One of the datasets, I've been able to explore is cleaned ship movements (derived from AIS data) through an organisation subscription. The cleaned data provided was split into:
+The value and challenge of data engineering in the public sector is creating useful real-world analogues as enriched columns or entity tables when commercial data is unavailable. With judicious data engineering, independent data sources can provide myriad perspectives with real-world relevance in analyses and modelling. 
+
+ One of the datasets, I've been able to explore is cleaned ship movements (derived from AIS data) through an organisation subscription. The cleaned data provided was split into:
 
 - Spatio-temporal point data of the movements - ship tracks
 - Spatio-temporal point data of stops - port visits
 
-While the bulk of the data cleaning work was already done by the provider, preparing the data for analysis that could connect to real-world issues still required some data wrangling. 
+While the bulk of the difficult data cleaning work was already done by the provider, preparing the data for analysis useful for policymakers required additional data wrangling. 
 
 ## Generalising concepts from commerical container shipping
 Shipping lines manage container ships like buses but with greater tactical and strategic agility as they are highly competitive markets. Ships are associated with a *vessel fleet* that make *journeys* for a given *service*  to *pre-set schedules*. For example, a weekly ANL shipping line service ([KIX](https://www.anl.com.au/products-services/line-services/flyer/KIXANL)) connecting New Zealand, Australia and Southeastern Asia. 
