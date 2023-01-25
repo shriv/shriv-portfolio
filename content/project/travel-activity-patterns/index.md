@@ -62,4 +62,4 @@ Generating splits further down the dendrogram can unearth more nuance. For examp
 
 
 #### Disclaimer
-The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses for policymaking. 
+The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses intended as demonstrations of approaches and techniques relevant to public sector data science. 

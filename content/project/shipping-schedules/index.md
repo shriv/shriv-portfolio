@@ -52,4 +52,4 @@ A completely different pattern exists for ships that have done a `Australia-New 
 ![](shipping-schedules-seasia.png)
 
 #### Disclaimer
-The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses for policymaking. 
+The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses intended as demonstrations of approaches and techniques relevant to public sector data science. 

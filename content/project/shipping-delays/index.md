@@ -51,4 +51,4 @@ We can zoom into the temporal patterns for voyages on the two problematic routes
 ![](voyage-time-series.png)
 
 #### Disclaimer
-The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses for policymaking. 
+The contents and figures in this post are not official outputs from the Ministry of Transport. They are research-oriented exploratory analyses intended as demonstrations of approaches and techniques relevant to public sector data science. 
