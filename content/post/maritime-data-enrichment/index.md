@@ -84,3 +84,11 @@ The exceptions of this classification are:
 
 The ordered set reduces the high variability in the order and number of visited ports across similar voyages. . For example, a ship that visits Auckland, Melbourne, Brisbane, Shanghai and Busan belongs to the `Australia-Eastern Asia-New Zealand` route. A ship that visits Tauranga, Sydney, Hong Kong, Ningbo and Tokyo will also be part of the same route `Australia-Eastern Asia-New Zealand`. 
 
+## Adding enrichment to ship tracks
+Since the port visits are a reduced version of the ship tracks focused on stop points, they are the first step for data enrichment. However, both data sets are complementary and provide different perspectives of ship movement. 
+
+![](connecting-port-visits-movements.png)
+
+The enrichment voyages and routes in port visits can be joined on the spatio-temporal ship tracks data on ship name. Fanout is removed with a time filter - only tracks within the time span of a given voyage are kept in the data. 
+
+![](port-visits-movement.png)
