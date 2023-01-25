@@ -41,9 +41,11 @@ slides: ""
 ---
 One of the challenges in the public sector is getting high level understanding of operational aspects without requiring commercially sensitive data or extensive negotiations to get consistent data from many commericial providers. 
 
-Since the COVID-19 pandemic, policymakers have needed information on ship schedules to better understand trade capacity in and out of New Zealand over time without the specificity of commercial offerings from shipping lines. Enriching a comprehensive data source like AIS (Automatic Identification System) with industry-relevant concepts like voyages and routes (see [blog post](https://shriv-portfolio.netlify.app/post/maritime-data-enrichment/)) allows us to build retrospective ship schedules from a single data source. These schedules, built from movement data, allow comparisons of how ships have actually moved on different routes.
+Since the COVID-19 pandemic, policymakers have needed information on ship schedules to and from New Zealand to derive contextual understanding of trade capacity over time without the specificity of commercial offerings from shipping lines. 
 
-For example, ships that made any Trans-Tasman (`Australia-New Zealand`) voyage in 2021, we see that around a third do the much longer `Latin America-New Zealand-Northern America` routes in between. Only a handful of ships do purely Trans-Tasman voyages for an extended period of time. 
+Enriching a comprehensive data source like AIS (Automatic Identification System) with industry-relevant concepts like voyages and routes (see [blog post](https://shriv-portfolio.netlify.app/post/maritime-data-enrichment/)) allows us to build retrospective ship schedules from a single data source. Simple visualisations summarise the relevant information for policymakers to easily compare ships doing differents and the proportion of time they spend on a voyage that includes New Zealand. 
+
+For example, we see that around a third of ships that made any Trans-Tasman (`Australia-New Zealand`) voyage in 2021 also do the much longer `Latin America-New Zealand-Northern America` routes in between. Only a handful of ships do purely Trans-Tasman voyages for an extended period of time. 
 
 ![](shipping-schedules-trans-tasman.png)
 
