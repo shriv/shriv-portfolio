@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Container Trade Forecasting"
+title: "COVID-19 impacts on economic indicators"
 summary: ""
 authors: []
 tags: []
