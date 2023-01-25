@@ -39,15 +39,15 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
-One of the challenges in the public sector is getting high level understanding of operational aspects without requiring commercial sensitive data or extensive negotiations to get consistent data from many commericial providers. 
+One of the challenges in the public sector is getting high level understanding of operational aspects without requiring commercially sensitive data or extensive negotiations to get consistent data from many commericial providers. 
 
-Since the COVID-19 pandemic, public sector has needed information of where and how ships have been carrying containerised goods in and out of New Zealand over time - without requiring specific details of commercial offerings from shipping lines. Enriching a comprehensive data source like AIS (Automatic Identification System) with industry-relevant concepts like voyages and routes (see [blog post](https://shriv-portfolio.netlify.app/post/maritime-data-enrichment/)) allows us to build retrospective ship schedules. 
+Since the COVID-19 pandemic, policymakers have needed information on ship schedules to better understand trade capacity in and out of New Zealand over time without the specificity of commercial offerings from shipping lines. Enriching a comprehensive data source like AIS (Automatic Identification System) with industry-relevant concepts like voyages and routes (see [blog post](https://shriv-portfolio.netlify.app/post/maritime-data-enrichment/)) allows us to build retrospective ship schedules from a single data source. These schedules, built from movement data, allow comparisons of how ships have actually moved on different routes.
 
-Retrospective schedules allow comparisons of how ships move around the world. For ships that have any Trans-Tasman (`Australia-New Zealand`) voyage in 2021, we see that around a third do the much longer `Latin America-New Zealand-Northern America` routes in between. Only 4 ships do purely Trans-Tasman voyages for an extended period of time. 
+For example, ships that made any Trans-Tasman (`Australia-New Zealand`) voyage in 2021, we see that around a third do the much longer `Latin America-New Zealand-Northern America` routes in between. Only a handful of ships do purely Trans-Tasman voyages for an extended period of time. 
 
 ![](shipping-schedules-trans-tasman.png)
 
-A completely different pattern exists for ships that have done a `Australia-New Zealand-Southeastern Asia` route. For these ships, around half run regularly on just this route. Another quarter run a variant which drops Australian ports on the voyage. 
+A completely different pattern exists for ships that have done a `Australia-New Zealand-Southeastern Asia` route. For these ships, around half run regularly on this route route while another quarter run a variant that only drops Australian ports on the voyage. 
 
 ![](shipping-schedules-seasia.png)
 
