@@ -32,7 +32,7 @@ projects: []
 ## Introduction
 The value and challenge of data engineering in the public sector is creating useful real-world analogues as enriched columns or entity tables when commercial data is unavailable. With judicious data engineering, independent data sources can provide myriad perspectives with real-world relevance in analyses and modelling. 
 
- One of the datasets, I've been able to explore is cleaned ship movements (derived from AIS data) through an organisation subscription. The cleaned data provided was split into:
+ One of the datasets, I've been able to explore is cleaned ship movements (derived from [AIS](https://en.wikipedia.org/wiki/Automatic_identification_system) data) through an organisation subscription. The cleaned data provided was split into:
 
 - Spatio-temporal point data of the movements - ship tracks
 - Spatio-temporal point data of stops - port visits
@@ -44,7 +44,7 @@ Shipping lines manage container ships like buses but with greater tactical and s
 
 ![](kix-anl.png)
 
-- **Service**: an ordered set of port visits with an associated fleet that is marketed by a shipping line. In the example above, the KIX service between New Zealand, Australia and Southeastern Asia marketed by the shopping line, ANL. 
+- **Service**: an ordered set of port visits with an associated fleet that is marketed by a shipping line. In the example above, the KIX service between New Zealand, Australia and Southeastern Asia marketed by the shipping line, ANL. 
 - **Journey**: a single rotation done by a ship in the service. 
 - **Schedule**: frequency and duration of service. 
 
@@ -74,7 +74,7 @@ Splitting a contiguous series of port visits into discrete voyages also offers t
 ![](splitting-voyages.png)
 
 ## Connecting seaboards with routes
-We have definted routes as a higher order entity as they can aggregate across voyages in a way that mimics liner shipping services set up by shipping lines but with added benefit of being insensitive to specific commercial offerings. 
+We have definted routes as a higher order entity as they can aggregate across voyages in a way that mimics liner shipping services set up by shipping lines but with the added benefit of being insensitive to specific commercial offerings. 
 
 Every voyage can be classified as belonging to a route based on the (alphabetically ordered) set of unique visited regions. We use the region classification to approximate a seaboard [UN geoscheme](https://en.wikipedia.org/wiki/United_Nations_geoscheme) at the subregion level based on the country of the visited port. 
 
@@ -82,13 +82,13 @@ The exceptions of this classification are:
 - dis-aggregating Australia and New Zealand 
 - aggregating Polynesia, Micronesia and Melanesia to Oceania.
 
-The ordered set reduces the high variability in the order and number of visited ports across similar voyages. . For example, a ship that visits Auckland, Melbourne, Brisbane, Shanghai and Busan belongs to the `Australia-Eastern Asia-New Zealand` route. A ship that visits Tauranga, Sydney, Hong Kong, Ningbo and Tokyo will also be part of the same route `Australia-Eastern Asia-New Zealand`. 
+The ordered set reduces the high variability in the order and number of visited ports in the same region across similar voyages. . For example, a ship that visits Auckland, Melbourne, Brisbane, Shanghai and Busan belongs to the `Australia-Eastern Asia-New Zealand` route. A ship that visits Tauranga, Sydney, Hong Kong, Ningbo and Tokyo will also be part of the same route `Australia-Eastern Asia-New Zealand`. 
 
 ## Adding enrichment to ship tracks
 Since the port visits are a reduced version of the ship tracks focused on stop points, they are the first step for data enrichment. However, both data sets are complementary and provide different perspectives of ship movement. 
 
 ![](connecting-port-visits-movements.png)
 
-The enrichment voyages and routes in port visits can be joined on the spatio-temporal ship tracks data on ship name. Fanout is removed with a time filter - only tracks within the time span of a given voyage are kept in the data. 
+The enrichment of voyages and routes in port visits can be joined to the spatio-temporal ship tracks data on ship name. Fanout is removed with a time filter - only tracks within the time span of a given voyage are kept in the data. 
 
 ![](port-visits-movement.png)
