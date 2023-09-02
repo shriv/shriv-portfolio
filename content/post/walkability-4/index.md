@@ -178,27 +178,26 @@ We can modify the standard layout slightly to get both the quadrants and the ave
 
 The quadrants represent _accessibility character_ which have a simplistic interpretation.
 
-|                      | **High $\mu_{norm}$** | **Low $\mu_{norm}$** |
+|                      | High $\mu_{norm}$ | Low $\mu_{norm}$ |
 | :------------------: | :------------: | :-----------: |
-| **Low $\sigma_{norm}$**   | Consistently good accessibility  |  Consistent but poor accessibility |
-| **High $\sigma_{norm}$**   | Poor accessibility for most areas |  Good accessibility for some areas |
+| Low $\sigma_{norm}$  | Consistently good accessibility  |  Consistent but poor accessibility |
+| High $\sigma_{norm}$  | Poor accessibility for most areas |  Good accessibility for some areas |
 
 
 We can get the suburbs that lie in the 4 quadrants listed above with some simple data filters. The list goes from the best suburbs to the worst in terms of consistent accessibility to playgrounds.
 
 
-| suburb | quadrant  |characteristic | $\sigma_{norm}$ | $\mu_{norm}$ |
-|--- |--- |--- |--- |---|
-|Te Aro|Low $\sigma$ and $\mu$| Consistently good accessibility|-4.714889|-5.776039|
-|Newtown|Low $\sigma$ and $\mu$| Consistently good accessibility |-5.269459|-3.736698|
-|Pipitea|Low $\sigma$; High $\mu$| Consistent but poor accessibility |12.573367|-2.964546|
-|Hataitai|Low $\sigma$; High $\mu$|Consistent but poor accessibility|3.120148|-3.707169|
-|Newlands|High $\sigma$; Low $\mu$|Good accessibility for some areas |-4.628588|2.523033|
-|Tawa|High $\sigma$; Low $\mu$| Good accessibility for some areas |-10.355696|2.839867|
-|Brooklyn|High $\sigma$; Low $\mu$| Good accessibility for some areas |-11.234330|15.768424|
-|Khandallah|High $\sigma$ and $\mu$| Poor accessibility for most areas|4.736581|4.641167|
-|Karori|High $\sigma$ and $\mu$| Poor accessibility for most areas|3.475087|8.664240|
-
+| suburb | quadrant  |characteristic |
+|--- |--- |--- |
+|Te Aro|Low $\sigma$ and $\mu$| Consistently good accessibility|
+|Newtown|Low $\sigma$ and $\mu$| Consistently good accessibility |
+|Pipitea|Low $\sigma$; High $\mu$| Consistent but poor accessibility |
+|Hataitai|Low $\sigma$; High $\mu$|Consistent but poor accessibility|
+|Newlands|High $\sigma$; Low $\mu$|Good accessibility for some areas |
+|Tawa|High $\sigma$; Low $\mu$| Good accessibility for some areas |
+|Brooklyn|High $\sigma$; Low $\mu$| Good accessibility for some areas |
+|Khandallah|High $\sigma$ and $\mu$| Poor accessibility for most areas|
+|Karori|High $\sigma$ and $\mu$| Poor accessibility for most areas|
 
 ### Suburbs that don't fit the model
 Part of the reason that Karori performs so poorly is because our model is a _poor fit_ to the accessibility data. In the figure below, we see that the raw values of accessibility appear to have 3 modes - a feature that is reduced to a single average mode in our model. This reduction causes both the $\mu$ and $\sigma$ values to inflate.
